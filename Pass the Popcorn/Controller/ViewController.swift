@@ -18,6 +18,8 @@ class ViewController: UIViewController {
         Tile(category: "Setting", description: "1955; Hill Valley, California")
     ]
     
+    var newTile = Tile(category: "Genre", description: "Adventure")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -26,7 +28,11 @@ class ViewController: UIViewController {
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
     }
 
-
+    @IBAction func addCategoryPressed(_ sender: UIButton) {
+        tiles.append(newTile)
+        tableView.reloadData()
+    }
+    
 }
 
 extension ViewController: UITableViewDataSource {
