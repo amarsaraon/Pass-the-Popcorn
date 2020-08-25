@@ -18,7 +18,7 @@ class SearchViewController: UIViewController {
     
     var movieList = [String]()
     
-    var fullMovieList = ["Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en"]
+    var fullMovieList = ["Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
