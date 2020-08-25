@@ -16,7 +16,7 @@ class SearchViewController: UIViewController {
     
     var delegate: isAbleToReceiveData?
     
-    var movieList = ["Back to the Future", "Se7en"]
+    var movieList = ["Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +33,7 @@ class SearchViewController: UIViewController {
     }
 
     @IBAction func checkPressed(_ sender: UIButton) {
-        self.dismiss(animated: true) {
-            print("hello")
-        }
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

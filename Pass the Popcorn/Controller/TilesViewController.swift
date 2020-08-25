@@ -60,6 +60,7 @@ extension TilesViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         performSegue(withIdentifier: K.resultTransitionName, sender: self)
+        textField.resignFirstResponder()
     }
     
 }
