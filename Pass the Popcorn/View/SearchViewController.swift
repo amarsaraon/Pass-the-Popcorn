@@ -16,11 +16,14 @@ class SearchViewController: UIViewController {
     
     var delegate: isAbleToReceiveData?
     
-    var movieList = ["Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en"]
+    var movieList = [String]()
+    
+    var fullMovieList = ["Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en", "Back to the Future", "Se7en"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //searchBar.becomeFirstResponder()
         movieTable.dataSource = self
         movieTable.delegate = self
         searchBar.delegate = self
@@ -69,8 +72,19 @@ extension SearchViewController: UITableViewDelegate {
 
 extension SearchViewController: UISearchBarDelegate {
     
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text {
+            movieList = fullMovieList.filter { $0.localizedStandardContains(text) }
+            movieTable.reloadData()
+            searchBar.resignFirstResponder()
+        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            movieList = []
+            movieTable.reloadData()
+        }
     }
     
 }
