@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TilesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchTextField: UITextField!
     
     var tiles: [Tile] = [
         Tile(category: "Actor", description: "Michael J. Fox"),
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         tableView.dataSource = self
+        searchTextField.delegate = self
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
     }
 
@@ -35,7 +37,9 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UITableViewDataSource {
+//MARK: - Table View Methodsw
+
+extension TilesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tiles.count
@@ -50,3 +54,33 @@ extension ViewController: UITableViewDataSource {
     
 }
 
+//MARK: - Text Field Methods/Segue
+
+extension TilesViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        performSegue(withIdentifier: K.resultTransitionName, sender: self)
+    }
+    
+}
+
+//MARK: - Receive Data Protocol
+
+protocol isAbleToReceiveData {
+  func pass(data: String)
+}
+
+extension TilesViewController: isAbleToReceiveData {
+    
+    func pass(data: String) {
+        searchTextField.text = data
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.resultTransitionName {
+            let desitationVC = segue.destination as! SearchViewController
+            desitationVC.delegate = self
+        }
+    }
+    
+}
