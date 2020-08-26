@@ -13,17 +13,12 @@ class TilesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
     
-    var tiles: [Tile] = [
-        Tile(category: "Actor", description: "Michael J. Fox"),
-        Tile(category: "Plot", description: "A 17-year-old high school student is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend."),
-        Tile(category: "Setting", description: "1955; Hill Valley, California")
-    ]
-    
-    var newTile = Tile(category: "Genre", description: "Adventure")
+    var tiles = [Tile]()
+    var movieChosen = listOfMovies[0]
+    var allTilesDone = False
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         tableView.dataSource = self
         searchTextField.delegate = self
@@ -31,8 +26,20 @@ class TilesViewController: UIViewController {
     }
 
     @IBAction func addCategoryPressed(_ sender: UIButton) {
-        tiles.append(newTile)
+        var tileCategory: String
+        var tileDescription: String
+        (tileCategory, tileDescription) = movieChosen.pickTile()
+        let newTile = Tile(category: tileCategory, description: tileDescription)
+        tiles.insert(newTile, at: 0)
         tableView.reloadData()
+    }
+    
+    @IBAction func guessPressed(_ sender: UIButton) {
+        if movieChosen.facts[0] == searchTextField.text {
+            print("Correct!")
+        } else {
+            print("Incorrect :(")
+        }
     }
     
 }
