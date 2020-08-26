@@ -21,12 +21,30 @@ class TilesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        for _ in 0...2 {
+            addTiles()
+        }
         tableView.dataSource = self
         searchTextField.delegate = self
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
     }
 
     @IBAction func addCategoryPressed(_ sender: UIButton) {
+        addTiles()
+    }
+    
+    @IBAction func guessPressed(_ sender: UIButton) {
+        if movieChosen.facts[0] == searchTextField.text {
+            print("Correct!")
+            refreshScreen()
+            
+        } else {
+            print("Incorrect :(")
+        }
+    }
+    
+    func addTiles() {
         if allTilesDone == false {
             var tileCategory: String
             var tileDescription: String
@@ -38,23 +56,22 @@ class TilesViewController: UIViewController {
             if isDone == true {
                 allTilesDone = true
                 addButton.isEnabled = false
-                //addButton.isHidden = true
-                addButton.alpha = 0.5
             }
         }
     }
     
-    @IBAction func guessPressed(_ sender: UIButton) {
-        if movieChosen.facts[0] == searchTextField.text {
-            print("Correct!")
-        } else {
-            print("Incorrect :(")
-        }
+    func refreshScreen() {
+        searchTextField.text = ""
+        allTilesDone = false
+        tiles = [Tile]()
+        movieChosen = listOfMovies[1]
+        addButton.isEnabled = true
+        viewDidLoad()
     }
     
 }
 
-//MARK: - Table View Methodsw
+//MARK: - Table View Methods
 
 extension TilesViewController: UITableViewDataSource {
     
