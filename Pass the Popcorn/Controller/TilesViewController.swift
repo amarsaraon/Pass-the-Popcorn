@@ -12,10 +12,11 @@ class TilesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var addButton: UIButton!
     
     var tiles = [Tile]()
     var movieChosen = listOfMovies[0]
-    var allTilesDone = False
+    var allTilesDone = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +27,21 @@ class TilesViewController: UIViewController {
     }
 
     @IBAction func addCategoryPressed(_ sender: UIButton) {
-        var tileCategory: String
-        var tileDescription: String
-        (tileCategory, tileDescription) = movieChosen.pickTile()
-        let newTile = Tile(category: tileCategory, description: tileDescription)
-        tiles.insert(newTile, at: 0)
-        tableView.reloadData()
+        if allTilesDone == false {
+            var tileCategory: String
+            var tileDescription: String
+            var isDone: Bool
+            (tileCategory, tileDescription, isDone) = movieChosen.pickTile()
+            let newTile = Tile(category: tileCategory, description: tileDescription)
+            tiles.insert(newTile, at: 0)
+            tableView.reloadData()
+            if isDone == true {
+                allTilesDone = true
+                addButton.isEnabled = false
+                //addButton.isHidden = true
+                addButton.alpha = 0.5
+            }
+        }
     }
     
     @IBAction func guessPressed(_ sender: UIButton) {

@@ -53,6 +53,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="C4G-aF-8Py" id="M12-06-cxG"/>
                         <outlet property="searchTextField" destination="IKQ-Hi-udy" id="Tul-lh-0YZ"/>
                         <outlet property="tableView" destination="46K-bQ-BpT" id="ShO-aI-QrR"/>
                         <segue destination="I6B-yy-GoV" kind="presentation" identifier="goToSearch" id="0fD-Rx-v3j"/>
