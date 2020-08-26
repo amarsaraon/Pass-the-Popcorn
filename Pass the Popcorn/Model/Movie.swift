@@ -8,16 +8,16 @@
 
 import Foundation
 
-let movieCategories = ["Title", "Year Released", "Genre", "Genre", "Setting", "Actor", "Actor", "Actor", "Character", "Character", "Character", "Plot", "Quote", "Tagline"]
+let movieCategories = ["Title", "Year Released", "Genre", "Genre", "Setting", "Actor", "Actor", "Actor", "Character", "Character", "Character", "Director", "Plot", "Quote", "Tagline"]
 
 struct Movie {
     
     var facts = [String]()
-    var nums = Array(1...13)
+    var nums = Array(1...movieCategories.count - 1)
     var n = 0
     var isDone = false
     
-    init(t: String, y: String, g1: String, g2: String, s: String, a1: String, a2: String, a3: String, c1: String, c2: String, c3: String, p: String, q: String, tg: String) {
+    init(t: String, y: String, g1: String, g2: String, s: String, a1: String, a2: String, a3: String, c1: String, c2: String, c3: String, d: String, p: String, q: String, tg: String) {
         facts.append(t)
         facts.append(y)
         facts.append(g1)
@@ -29,6 +29,7 @@ struct Movie {
         facts.append(c1)
         facts.append(c2)
         facts.append(c3)
+        facts.append(d)
         facts.append(p)
         facts.append(q)
         facts.append(tg)
