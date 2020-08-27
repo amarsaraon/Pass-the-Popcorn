@@ -37,10 +37,12 @@ class TilesViewController: UIViewController {
     @IBAction func guessPressed(_ sender: UIButton) {
         if movieChosen.facts[0] == searchTextField.text {
             print("Correct!")
+            performSegue(withIdentifier: K.resultTransitionName, sender: self)
             refreshScreen()
             
         } else {
             print("Incorrect :(")
+            performSegue(withIdentifier: K.resultTransitionName, sender: self)
         }
     }
     
@@ -94,7 +96,7 @@ extension TilesViewController: UITableViewDataSource {
 extension TilesViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        performSegue(withIdentifier: K.resultTransitionName, sender: self)
+        performSegue(withIdentifier: K.searchTransitionName, sender: self)
         textField.resignFirstResponder()
     }
     
@@ -113,7 +115,7 @@ extension TilesViewController: isAbleToReceiveData {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == K.resultTransitionName {
+        if segue.identifier == K.searchTransitionName {
             let desitationVC = segue.destination as! SearchViewController
             desitationVC.delegate = self
         }

@@ -19,6 +19,7 @@
 		C3A09E7924F41A610016C491 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A09E7724F41A610016C491 /* LaunchScreen.storyboard */; };
 		C3A09E8124F424A00016C491 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A09E8024F424A00016C491 /* Tile.swift */; };
 		C3A3478F24F6C231008B6A57 /* MovieExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A3478E24F6C231008B6A57 /* MovieExamples.swift */; };
+		C3B9865524F82B1E00C370D5 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9865424F82B1E00C370D5 /* ResultViewController.swift */; };
 		C3EE6E0824F5674700CD3F58 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE6E0724F5674700CD3F58 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		C3A09E7A24F41A610016C491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3A09E8024F424A00016C491 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		C3A3478E24F6C231008B6A57 /* MovieExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieExamples.swift; path = "Pass the Popcorn/Controller/MovieExamples.swift"; sourceTree = SOURCE_ROOT; };
+		C3B9865424F82B1E00C370D5 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultViewController.swift; path = ../View/ResultViewController.swift; sourceTree = "<group>"; };
 		C3EE6E0724F5674700CD3F58 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = "Pass the Popcorn/View/SearchViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -76,6 +78,7 @@
 			children = (
 				C3A09E7024F41A600016C491 /* TilesViewController.swift */,
 				C3EE6E0724F5674700CD3F58 /* SearchViewController.swift */,
+				C3B9865424F82B1E00C370D5 /* ResultViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				C3A3478F24F6C231008B6A57 /* MovieExamples.swift in Sources */,
 				C3181B3824F426E4008C1F2E /* K.swift in Sources */,
 				C3A09E6D24F41A600016C491 /* AppDelegate.swift in Sources */,
+				C3B9865524F82B1E00C370D5 /* ResultViewController.swift in Sources */,
 				C3A09E6F24F41A600016C491 /* SceneDelegate.swift in Sources */,
 				C3A09E8124F424A00016C491 /* Tile.swift in Sources */,
 				C395F20F24F6AD25003D528C /* Movie.swift in Sources */,
