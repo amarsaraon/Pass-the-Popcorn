@@ -15,11 +15,47 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var moviePoster: UIImageView!
     @IBOutlet weak var returnButton: UIButton!
     
+    var correct: Bool?
+    var movieTitle: String?
+    var filePath = "https://theposterdb.com/api/assets/";
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationController?.setNavigationBarHidden(true, animated: true)
+        setUpScreen()
+    }
+    
+    func setUpScreen() {
+        if let title = movieTitle {
+            if correct! == true {
+                correctLabel.text = "Correct!"
+                getPoster()
+                movieLabel.text = title
+                returnButton.setTitle("Play Again", for: .normal)
+            } else {
+                correctLabel.text = "Incorrect :("
+                movieLabel.text = ""
+                returnButton.setTitle("Guess Again", for: .normal)
+            }
+        }
     }
 
+    @IBAction func returnButtonPressed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func getPoster() {
+        if let title = movieTitle {
+            let url = URL(string: "https://theposterdb.com/api/assets/\(posterDict[title]!)")
+            print(url!)
+            let data = try? Data(contentsOf: url!)
+
+            if let imageData = data {
+                let image = UIImage(data: imageData)
+                moviePoster.image = image
+            }
+        }
+    }
+    
 }

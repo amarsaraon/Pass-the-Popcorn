@@ -13,17 +13,19 @@ class TilesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var guessButton: UIButton!
     
     var tiles = [Tile]()
     var movieChosen = listOfMovies[0]
     var allTilesDone = false
+    var isCorrect = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         for _ in 0...2 {
-            addTiles()
+            addTile()
         }
         tableView.dataSource = self
         searchTextField.delegate = self
@@ -31,22 +33,22 @@ class TilesViewController: UIViewController {
     }
 
     @IBAction func addCategoryPressed(_ sender: UIButton) {
-        addTiles()
+        addTile()
     }
     
     @IBAction func guessPressed(_ sender: UIButton) {
         if movieChosen.facts[0] == searchTextField.text {
             print("Correct!")
+            isCorrect = true
             performSegue(withIdentifier: K.resultTransitionName, sender: self)
             refreshScreen()
-            
         } else {
             print("Incorrect :(")
             performSegue(withIdentifier: K.resultTransitionName, sender: self)
         }
     }
     
-    func addTiles() {
+    func addTile() {
         if allTilesDone == false {
             var tileCategory: String
             var tileDescription: String
@@ -68,6 +70,8 @@ class TilesViewController: UIViewController {
         tiles = [Tile]()
         movieChosen = listOfMovies[1]
         addButton.isEnabled = true
+        guessButton.isEnabled = false
+        isCorrect = false
         viewDidLoad()
     }
     
@@ -105,19 +109,28 @@ extension TilesViewController: UITextFieldDelegate {
 //MARK: - Receive Data Protocol
 
 protocol isAbleToReceiveData {
-  func pass(data: String)
+    func pass(data: String)
 }
 
 extension TilesViewController: isAbleToReceiveData {
     
     func pass(data: String) {
         searchTextField.text = data
+        if searchTextField.text != "" {
+            guessButton.isEnabled = true
+        } else {
+            guessButton.isEnabled = false
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.searchTransitionName {
             let desitationVC = segue.destination as! SearchViewController
             desitationVC.delegate = self
+        } else if segue.identifier == K.resultTransitionName {
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.correct = isCorrect
+            destinationVC.movieTitle = movieChosen.facts[0]
         }
     }
     
