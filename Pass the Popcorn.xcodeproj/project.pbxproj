@@ -21,9 +21,13 @@
 		C3A3478F24F6C231008B6A57 /* MovieExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A3478E24F6C231008B6A57 /* MovieExamples.swift */; };
 		C3B9865524F82B1E00C370D5 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9865424F82B1E00C370D5 /* ResultViewController.swift */; };
 		C3EE6E0824F5674700CD3F58 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE6E0724F5674700CD3F58 /* SearchViewController.swift */; };
+		FE8200AECA3F53B1D34776CD /* Pods_Pass_the_Popcorn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B18E045959341B98CFC6839 /* Pods_Pass_the_Popcorn.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B18E045959341B98CFC6839 /* Pods_Pass_the_Popcorn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pass_the_Popcorn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		865394D497BB48C454887631 /* Pods-Pass the Popcorn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pass the Popcorn.release.xcconfig"; path = "Target Support Files/Pods-Pass the Popcorn/Pods-Pass the Popcorn.release.xcconfig"; sourceTree = "<group>"; };
+		B644B366FE3FF25A8694D016 /* Pods-Pass the Popcorn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pass the Popcorn.debug.xcconfig"; path = "Target Support Files/Pods-Pass the Popcorn/Pods-Pass the Popcorn.debug.xcconfig"; sourceTree = "<group>"; };
 		C3181B3724F426E4008C1F2E /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		C3181B3924F42A89008C1F2E /* TileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCell.swift; sourceTree = "<group>"; };
 		C3181B3A24F42A89008C1F2E /* TileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TileCell.xib; sourceTree = "<group>"; };
@@ -47,12 +51,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE8200AECA3F53B1D34776CD /* Pods_Pass_the_Popcorn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B853E9F1DBFC363405D4C47 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B644B366FE3FF25A8694D016 /* Pods-Pass the Popcorn.debug.xcconfig */,
+				865394D497BB48C454887631 /* Pods-Pass the Popcorn.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C3181B3D24F42A99008C1F2E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +103,8 @@
 			children = (
 				C3A09E6B24F41A600016C491 /* Pass the Popcorn */,
 				C3A09E6A24F41A600016C491 /* Products */,
+				7B853E9F1DBFC363405D4C47 /* Pods */,
+				D76BEEBB31BE86FCCB1B7F11 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +132,14 @@
 			path = "Pass the Popcorn";
 			sourceTree = "<group>";
 		};
+		D76BEEBB31BE86FCCB1B7F11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B18E045959341B98CFC6839 /* Pods_Pass_the_Popcorn.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +147,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C3A09E7D24F41A610016C491 /* Build configuration list for PBXNativeTarget "Pass the Popcorn" */;
 			buildPhases = (
+				DFF021768D9BECA933016B9F /* [CP] Check Pods Manifest.lock */,
 				C3A09E6524F41A600016C491 /* Sources */,
 				C3A09E6624F41A600016C491 /* Frameworks */,
 				C3A09E6724F41A600016C491 /* Resources */,
+				047430CAF06D6268ADB98FF0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,6 +208,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		047430CAF06D6268ADB98FF0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pass the Popcorn/Pods-Pass the Popcorn-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pass the Popcorn/Pods-Pass the Popcorn-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pass the Popcorn/Pods-Pass the Popcorn-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFF021768D9BECA933016B9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pass the Popcorn-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C3A09E6524F41A600016C491 /* Sources */ = {
@@ -338,6 +407,7 @@
 		};
 		C3A09E7E24F41A610016C491 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B644B366FE3FF25A8694D016 /* Pods-Pass the Popcorn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -356,6 +426,7 @@
 		};
 		C3A09E7F24F41A610016C491 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 865394D497BB48C454887631 /* Pods-Pass the Popcorn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

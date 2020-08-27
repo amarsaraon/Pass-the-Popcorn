@@ -15,15 +15,16 @@ class TilesViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var guessButton: UIButton!
     
+    var movieChosen: Movie?
     var tiles = [Tile]()
-    var movieChosen = listOfMovies[0]
+    var movieNum = 0
     var allTilesDone = false
     var isCorrect = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        chooseMovie()
         for _ in 0...2 {
             addTile()
         }
@@ -36,14 +37,23 @@ class TilesViewController: UIViewController {
         addTile()
     }
     
+    func chooseMovie() {
+        movieChosen = listOfMovies[movieNum]
+        if movieNum >= listOfMovies.count - 1 {
+            movieNum = 0
+        } else {
+            movieNum += 1
+        }
+    }
+    
     @IBAction func guessPressed(_ sender: UIButton) {
-        if movieChosen.facts[0] == searchTextField.text {
-            print("Correct!")
+        if movieChosen!.facts[0] == searchTextField.text {
+            //print("Correct!")
             isCorrect = true
             performSegue(withIdentifier: K.resultTransitionName, sender: self)
             refreshScreen()
         } else {
-            print("Incorrect :(")
+            //print("Incorrect :(")
             performSegue(withIdentifier: K.resultTransitionName, sender: self)
         }
     }
@@ -53,7 +63,7 @@ class TilesViewController: UIViewController {
             var tileCategory: String
             var tileDescription: String
             var isDone: Bool
-            (tileCategory, tileDescription, isDone) = movieChosen.pickTile()
+            (tileCategory, tileDescription, isDone) = movieChosen!.pickTile()
             let newTile = Tile(category: tileCategory, description: tileDescription)
             tiles.insert(newTile, at: 0)
             tableView.reloadData()
@@ -68,7 +78,6 @@ class TilesViewController: UIViewController {
         searchTextField.text = ""
         allTilesDone = false
         tiles = [Tile]()
-        movieChosen = listOfMovies[1]
         addButton.isEnabled = true
         guessButton.isEnabled = false
         isCorrect = false
@@ -130,7 +139,7 @@ extension TilesViewController: isAbleToReceiveData {
         } else if segue.identifier == K.resultTransitionName {
             let destinationVC = segue.destination as! ResultViewController
             destinationVC.correct = isCorrect
-            destinationVC.movieTitle = movieChosen.facts[0]
+            destinationVC.movieTitle = movieChosen!.facts[0]
         }
     }
     

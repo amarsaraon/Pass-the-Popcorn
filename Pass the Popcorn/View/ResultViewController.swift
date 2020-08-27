@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class ResultViewController: UIViewController {
 
@@ -48,14 +49,21 @@ class ResultViewController: UIViewController {
     func getPoster() {
         if let title = movieTitle {
             let url = URL(string: "https://theposterdb.com/api/assets/\(posterDict[title]!)")
-            print(url!)
             let data = try? Data(contentsOf: url!)
-
             if let imageData = data {
-                let image = UIImage(data: imageData)
-                moviePoster.image = image
+                if let image = UIImage(data: imageData) {
+                    moviePoster.image = image
+                    colorBackground(poster: image)
+                }
             }
         }
+    }
+    
+    func colorBackground(poster: UIImage) {
+        let averageColor = AverageColorFromImage(poster)
+        let lighter = averageColor.lighten(byPercentage: 0.2)
+        let darker = averageColor.darken(byPercentage: 0.2)
+        view.backgroundColor = GradientColor(UIGradientStyle.topToBottom, frame: view.frame, colors: [averageColor, lighter!, darker!])
     }
     
 }
