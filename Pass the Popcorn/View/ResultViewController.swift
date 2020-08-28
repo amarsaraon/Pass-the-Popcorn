@@ -22,6 +22,7 @@ class ResultViewController: UIViewController {
     let filePath = "https://theposterdb.com/api/assets/";
     var moviePosterImage: UIImage?
     var backgroundColor: UIColor?
+    var textColor: UIColor?
     
     var delegate: isAbleToRefreshScreen?
     
@@ -89,12 +90,19 @@ class ResultViewController: UIViewController {
     func colorBackground(poster: UIImage) {
         if let color = backgroundColor {
             view.backgroundColor = color
+            correctLabel.textColor = textColor
+            movieLabel.textColor = textColor
         } else {
             let averageColor = AverageColorFromImage(poster)
             let lighter = averageColor.lighten(byPercentage: 0.2)
             let darker = averageColor.darken(byPercentage: 0.2)
             backgroundColor = GradientColor(UIGradientStyle.topToBottom, frame: view.frame, colors: [averageColor, lighter!, darker!])
-            view.backgroundColor = backgroundColor
+            if let color = backgroundColor {
+                view.backgroundColor = color
+                textColor = ContrastColorOf(color, returnFlat: true)
+                correctLabel.textColor = textColor
+                movieLabel.textColor = textColor
+            }
         }
     }
     
