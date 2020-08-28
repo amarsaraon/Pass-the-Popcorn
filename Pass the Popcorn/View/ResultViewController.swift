@@ -18,22 +18,39 @@ class ResultViewController: UIViewController {
     
     var correct: Bool?
     var movieTitle: String?
-    var filePath = "https://theposterdb.com/api/assets/";
+    var allMoviesChosen: Bool?
+    let filePath = "https://theposterdb.com/api/assets/";
+    var moviePosterImage: UIImage?
+    var backgroundColor: UIColor?
+    
+    var delegate: isAbleToRefreshScreen?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationController?.setNavigationBarHidden(true, animated: true)
+        getPoster()
         setUpScreen()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        delegate?.clearTextFieldSearch()
+        if correct == true {
+            delegate?.refreshScreen()
+        }
     }
     
     func setUpScreen() {
         if let title = movieTitle {
             if correct! == true {
                 correctLabel.text = "Correct!"
-                getPoster()
                 movieLabel.text = title
-                returnButton.setTitle("Play Again", for: .normal)
+                if allMoviesChosen == false {
+                    returnButton.setTitle("Play Again", for: .normal)
+                } else {
+                    returnButton.isEnabled = false
+                    returnButton.setTitle("All Movies Played", for: .normal)
+                }
             } else {
                 correctLabel.text = "Incorrect :("
                 movieLabel.text = ""
@@ -47,23 +64,38 @@ class ResultViewController: UIViewController {
     }
     
     func getPoster() {
-        if let title = movieTitle {
-            let url = URL(string: "https://theposterdb.com/api/assets/\(posterDict[title]!)")
-            let data = try? Data(contentsOf: url!)
-            if let imageData = data {
-                if let image = UIImage(data: imageData) {
-                    moviePoster.image = image
-                    colorBackground(poster: image)
+        if let currentPoster = moviePosterImage {
+            if correct == true {
+                moviePoster.image = currentPoster
+            }
+            colorBackground(poster: currentPoster)
+        } else {
+            if let title = movieTitle {
+                let url = URL(string: "https://theposterdb.com/api/assets/\(posterDict[title]!.randomElement()!)")
+                let data = try? Data(contentsOf: url!)
+                if let imageData = data {
+                    if let image = UIImage(data: imageData) {
+                        moviePosterImage = image
+                        if correct == true {
+                            moviePoster.image = image
+                        }
+                        colorBackground(poster: image)
+                    }
                 }
             }
         }
     }
     
     func colorBackground(poster: UIImage) {
-        let averageColor = AverageColorFromImage(poster)
-        let lighter = averageColor.lighten(byPercentage: 0.2)
-        let darker = averageColor.darken(byPercentage: 0.2)
-        view.backgroundColor = GradientColor(UIGradientStyle.topToBottom, frame: view.frame, colors: [averageColor, lighter!, darker!])
+        if let color = backgroundColor {
+            view.backgroundColor = color
+        } else {
+            let averageColor = AverageColorFromImage(poster)
+            let lighter = averageColor.lighten(byPercentage: 0.2)
+            let darker = averageColor.darken(byPercentage: 0.2)
+            backgroundColor = GradientColor(UIGradientStyle.topToBottom, frame: view.frame, colors: [averageColor, lighter!, darker!])
+            view.backgroundColor = backgroundColor
+        }
     }
     
 }

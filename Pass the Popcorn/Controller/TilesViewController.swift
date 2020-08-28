@@ -17,14 +17,14 @@ class TilesViewController: UIViewController {
     
     var movieChosen: Movie?
     var tiles = [Tile]()
-    var movieNum = 0
     var allTilesDone = false
     var isCorrect = false
+    var allMoviesChosen = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chooseMovie()
+        (movieChosen, allMoviesChosen) = chooseMovie()
         for _ in 0...2 {
             addTile()
         }
@@ -37,21 +37,11 @@ class TilesViewController: UIViewController {
         addTile()
     }
     
-    func chooseMovie() {
-        movieChosen = listOfMovies[movieNum]
-        if movieNum >= listOfMovies.count - 1 {
-            movieNum = 0
-        } else {
-            movieNum += 1
-        }
-    }
-    
     @IBAction func guessPressed(_ sender: UIButton) {
         if movieChosen!.facts[0] == searchTextField.text {
             //print("Correct!")
             isCorrect = true
             performSegue(withIdentifier: K.resultTransitionName, sender: self)
-            refreshScreen()
         } else {
             //print("Incorrect :(")
             performSegue(withIdentifier: K.resultTransitionName, sender: self)
@@ -72,16 +62,6 @@ class TilesViewController: UIViewController {
                 addButton.isEnabled = false
             }
         }
-    }
-    
-    func refreshScreen() {
-        searchTextField.text = ""
-        allTilesDone = false
-        tiles = [Tile]()
-        addButton.isEnabled = true
-        guessButton.isEnabled = false
-        isCorrect = false
-        viewDidLoad()
     }
     
 }
@@ -138,9 +118,36 @@ extension TilesViewController: isAbleToReceiveData {
             desitationVC.delegate = self
         } else if segue.identifier == K.resultTransitionName {
             let destinationVC = segue.destination as! ResultViewController
+            destinationVC.delegate = self
             destinationVC.correct = isCorrect
             destinationVC.movieTitle = movieChosen!.facts[0]
+            destinationVC.allMoviesChosen = allMoviesChosen
         }
     }
     
 }
+
+//MARK: - Refresh Screen Protocol
+
+protocol isAbleToRefreshScreen {
+    func refreshScreen()
+    func clearTextFieldSearch()
+}
+
+extension TilesViewController: isAbleToRefreshScreen {
+    
+    func refreshScreen() {
+        allTilesDone = false
+        tiles = [Tile]()
+        addButton.isEnabled = true
+        guessButton.isEnabled = false
+        isCorrect = false
+        viewDidLoad()
+    }
+    
+    func clearTextFieldSearch() {
+        searchTextField.text = ""
+    }
+}
+
+
