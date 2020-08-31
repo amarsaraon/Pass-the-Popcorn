@@ -90,8 +90,7 @@ class ResultViewController: UIViewController {
     func colorBackground(poster: UIImage) {
         if let color = backgroundColor {
             view.backgroundColor = color
-            correctLabel.textColor = textColor
-            movieLabel.textColor = textColor
+            changeLabelColor(color: textColor!)
         } else {
             let averageColor = AverageColorFromImage(poster)
             let lighter = averageColor.lighten(byPercentage: 0.2)
@@ -100,10 +99,16 @@ class ResultViewController: UIViewController {
             if let color = backgroundColor {
                 view.backgroundColor = color
                 textColor = ContrastColorOf(color, returnFlat: true)
-                correctLabel.textColor = textColor
-                movieLabel.textColor = textColor
+                if let colorTwo = textColor {
+                    changeLabelColor(color: colorTwo)
+                }
             }
         }
+    }
+    
+    func changeLabelColor(color: UIColor) {
+        correctLabel.textColor = textColor
+        movieLabel.textColor = textColor
     }
     
 }
