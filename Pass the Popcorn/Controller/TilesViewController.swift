@@ -24,7 +24,7 @@ class TilesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        (movieChosen, allMoviesChosen) = chooseMovie()
+        //(movieChosen, allMoviesChosen) = chooseMovie()
         for _ in 0...2 {
             addTile()
         }
@@ -118,7 +118,6 @@ extension TilesViewController: isAbleToReceiveData {
             desitationVC.delegate = self
         } else if segue.identifier == K.resultTransitionName {
             let destinationVC = segue.destination as! ResultViewController
-            destinationVC.delegate = self
             destinationVC.correct = isCorrect
             destinationVC.movieTitle = movieChosen!.facts[0]
             destinationVC.allMoviesChosen = allMoviesChosen
@@ -129,25 +128,25 @@ extension TilesViewController: isAbleToReceiveData {
 
 //MARK: - Refresh Screen Protocol
 
-protocol isAbleToRefreshScreen {
-    func refreshScreen()
-    func clearTextFieldSearch()
-}
-
-extension TilesViewController: isAbleToRefreshScreen {
-    
-    func refreshScreen() {
-        allTilesDone = false
-        tiles = [Tile]()
-        addButton.isEnabled = true
-        guessButton.isEnabled = false
-        isCorrect = false
-        viewDidLoad()
-    }
-    
-    func clearTextFieldSearch() {
-        searchTextField.text = ""
-    }
-}
+//protocol isAbleToRefreshScreen {
+//    func refreshScreen()
+//    func clearTextFieldSearch()
+//}
+//
+//extension TilesViewController: isAbleToRefreshScreen {
+//
+//    func refreshScreen() {
+//        allTilesDone = false
+//        tiles = [Tile]()
+//        addButton.isEnabled = true
+//        guessButton.isEnabled = false
+//        isCorrect = false
+//        viewDidLoad()
+//    }
+//
+//    func clearTextFieldSearch() {
+//        searchTextField.text = ""
+//    }
+//}
 
 

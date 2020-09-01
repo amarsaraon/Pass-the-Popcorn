@@ -14,7 +14,7 @@ class TileCell: UITableViewCell {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    var colorDict = ["Year Released": UIColor.green, "Genre": UIColor.red, "Setting": UIColor.purple, "Actor": UIColor.blue, "Character": UIColor.yellow, "Director": UIColor.orange, "Plot": UIColor.gray, "Quote": UIColor.lightGray, "Tagline": UIColor.darkGray]
+    var colorDict = ["Year Released": UIColor.flatGreenDark(), "Genre": UIColor.flatRedDark(), "Setting": UIColor.purple, "Actor": UIColor.blue, "Character": UIColor.yellow, "Director": UIColor.darkGray, "Plot": UIColor.black, "Quote": UIColor.white]
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +32,8 @@ class TileCell: UITableViewCell {
     func changeColor(category: String) {
         //tile.backgroundColor = colorDict[category]
         tile.backgroundColor = UIColor.orange
+        //self.categoryLabel.textColor = colorDict[category]
+        self.categoryLabel.font = UIFont.boldSystemFont(ofSize: self.categoryLabel.font.pointSize)
     }
     
 }

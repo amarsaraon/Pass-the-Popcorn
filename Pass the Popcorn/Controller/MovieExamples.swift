@@ -30,13 +30,13 @@ var fullMovieList = ["Back to the Future", "Se7en", "Die Hard", "Star Wars: Epis
 //    }
 //}
 
-var movieNums = Array(0...listOfMovies.count - 1)
-
-func chooseMovie() -> (Movie, Bool) {
-    if let index = movieNums.randomElement() {
-        movieNums.removeAll(where: { $0 == index })
-        let isDone = movieNums.count == 0
-        return (listOfMovies[index], isDone)
-    }
-    fatalError("Picked movie from empty list")
-}
+//var movieNums = Array(0...listOfMovies.count - 1)
+//
+//func chooseMovie() -> (Movie, Bool) {
+//    if let index = movieNums.randomElement() {
+//        movieNums.removeAll(where: { $0 == index })
+//        let isDone = movieNums.count == 0
+//        return (listOfMovies[index], isDone)
+//    }
+//    fatalError("Picked movie from empty list")
+//}

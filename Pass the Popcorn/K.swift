@@ -13,4 +13,5 @@ struct K {
     static let cellNibName = "TileCell"
     static let searchTransitionName = "goToSearch"
     static let resultTransitionName = "goToResult"
+    static let tilesTransitionName = "goToTiles"
 }

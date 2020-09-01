@@ -24,21 +24,12 @@ class ResultViewController: UIViewController {
     var backgroundColor: UIColor?
     var textColor: UIColor?
     
-    var delegate: isAbleToRefreshScreen?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationController?.setNavigationBarHidden(true, animated: true)
         getPoster()
         setUpScreen()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        delegate?.clearTextFieldSearch()
-        if correct == true {
-            delegate?.refreshScreen()
-        }
     }
     
     func setUpScreen() {
@@ -61,7 +52,7 @@ class ResultViewController: UIViewController {
     }
 
     @IBAction func returnButtonPressed(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     func getPoster() {
