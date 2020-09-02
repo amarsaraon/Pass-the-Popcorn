@@ -19,18 +19,20 @@ class TilesViewController: UIViewController {
     var tiles = [Tile]()
     var allTilesDone = false
     var isCorrect = false
-    var allMoviesChosen = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //(movieChosen, allMoviesChosen) = chooseMovie()
         for _ in 0...2 {
             addTile()
         }
         tableView.dataSource = self
         searchTextField.delegate = self
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        searchTextField.text = ""
     }
 
     @IBAction func addCategoryPressed(_ sender: UIButton) {
@@ -120,33 +122,8 @@ extension TilesViewController: isAbleToReceiveData {
             let destinationVC = segue.destination as! ResultViewController
             destinationVC.correct = isCorrect
             destinationVC.movieTitle = movieChosen!.facts[0]
-            destinationVC.allMoviesChosen = allMoviesChosen
         }
     }
     
 }
-
-//MARK: - Refresh Screen Protocol
-
-//protocol isAbleToRefreshScreen {
-//    func refreshScreen()
-//    func clearTextFieldSearch()
-//}
-//
-//extension TilesViewController: isAbleToRefreshScreen {
-//
-//    func refreshScreen() {
-//        allTilesDone = false
-//        tiles = [Tile]()
-//        addButton.isEnabled = true
-//        guessButton.isEnabled = false
-//        isCorrect = false
-//        viewDidLoad()
-//    }
-//
-//    func clearTextFieldSearch() {
-//        searchTextField.text = ""
-//    }
-//}
-
 

@@ -9,9 +9,15 @@
 import Foundation
 
 struct K {
+    
     static let cellIdentifier = "ReusableCell"
     static let cellNibName = "TileCell"
     static let searchTransitionName = "goToSearch"
     static let resultTransitionName = "goToResult"
     static let tilesTransitionName = "goToTiles"
+    
+    struct ResultButtonLabels {
+        static let playAgain = "Play Again"
+        static let guessAgain = "Guess Again"
+    }
 }

@@ -18,7 +18,6 @@ class ResultViewController: UIViewController {
     
     var correct: Bool?
     var movieTitle: String?
-    var allMoviesChosen: Bool?
     let filePath = "https://theposterdb.com/api/assets/";
     var moviePosterImage: UIImage?
     var backgroundColor: UIColor?
@@ -30,6 +29,7 @@ class ResultViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
         getPoster()
         setUpScreen()
+        returnButton.layer.cornerRadius = returnButton.frame.size.height / 5
     }
     
     func setUpScreen() {
@@ -37,22 +37,25 @@ class ResultViewController: UIViewController {
             if correct! == true {
                 correctLabel.text = "Correct!"
                 movieLabel.text = title
-                if allMoviesChosen == false {
-                    returnButton.setTitle("Play Again", for: .normal)
-                } else {
-                    returnButton.isEnabled = false
-                    returnButton.setTitle("All Movies Played", for: .normal)
+                returnButton.setTitle(K.ResultButtonLabels.playAgain, for: .normal)
+                doneDict[movieTitle!] = true
+                for i in 0...doneDict.count - 1 {
+                    print(doneDict[listOfMovies[i].facts[0]]!)
                 }
             } else {
                 correctLabel.text = "Incorrect :("
                 movieLabel.text = ""
-                returnButton.setTitle("Guess Again", for: .normal)
+                returnButton.setTitle(K.ResultButtonLabels.guessAgain, for: .normal)
             }
         }
     }
 
     @IBAction func returnButtonPressed(_ sender: UIButton) {
-        navigationController?.popToRootViewController(animated: true)
+        if sender.titleLabel?.text == K.ResultButtonLabels.playAgain {
+            navigationController?.popToRootViewController(animated: true)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     func getPoster() {
