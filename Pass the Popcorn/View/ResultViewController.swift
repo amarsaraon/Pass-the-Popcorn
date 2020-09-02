@@ -39,6 +39,7 @@ class ResultViewController: UIViewController {
                 movieLabel.text = title
                 returnButton.setTitle(K.ResultButtonLabels.playAgain, for: .normal)
                 doneDict[movieTitle!] = true
+                updateMovies(movieName: movieTitle!)
                 for i in 0...doneDict.count - 1 {
                     print(doneDict[listOfMovies[i].facts[0]]!)
                 }

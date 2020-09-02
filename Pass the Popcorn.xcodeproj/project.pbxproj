@@ -11,6 +11,7 @@
 		C3181B3B24F42A89008C1F2E /* TileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3181B3924F42A89008C1F2E /* TileCell.swift */; };
 		C3181B3C24F42A89008C1F2E /* TileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3181B3A24F42A89008C1F2E /* TileCell.xib */; };
 		C318501924FFF1A900D06104 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318501824FFF1A900D06104 /* MovieData.swift */; };
+		C389377A2500280D00832E6D /* LoadMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38937792500280D00832E6D /* LoadMovies.swift */; };
 		C395F20F24F6AD25003D528C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C395F20E24F6AD25003D528C /* Movie.swift */; };
 		C3A09E6D24F41A600016C491 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A09E6C24F41A600016C491 /* AppDelegate.swift */; };
 		C3A09E6F24F41A600016C491 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A09E6E24F41A600016C491 /* SceneDelegate.swift */; };
@@ -34,6 +35,7 @@
 		C3181B3924F42A89008C1F2E /* TileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCell.swift; sourceTree = "<group>"; };
 		C3181B3A24F42A89008C1F2E /* TileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TileCell.xib; sourceTree = "<group>"; };
 		C318501824FFF1A900D06104 /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieData.swift; path = "Pass the Popcorn/MovieData.swift"; sourceTree = SOURCE_ROOT; };
+		C38937792500280D00832E6D /* LoadMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadMovies.swift; path = "Pass the Popcorn/Controller/LoadMovies.swift"; sourceTree = SOURCE_ROOT; };
 		C395F20E24F6AD25003D528C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		C3A09E6924F41A600016C491 /* Pass the Popcorn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pass the Popcorn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A09E6C24F41A600016C491 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		C3181B3D24F42A99008C1F2E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C38937792500280D00832E6D /* LoadMovies.swift */,
 				C3A3478E24F6C231008B6A57 /* MovieExamples.swift */,
 				C3A09E8024F424A00016C491 /* Tile.swift */,
 				C395F20E24F6AD25003D528C /* Movie.swift */,
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C389377A2500280D00832E6D /* LoadMovies.swift in Sources */,
 				C318501924FFF1A900D06104 /* MovieData.swift in Sources */,
 				C3A09E7124F41A600016C491 /* TilesViewController.swift in Sources */,
 				C3EE6E0824F5674700CD3F58 /* SearchViewController.swift in Sources */,
