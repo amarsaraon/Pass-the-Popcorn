@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Error initialising new realm, \(error)")
         }
         
+        let realmMovies = realm.objects(MovieData.self)
+        loadMovies(realmMovies: realmMovies)
+        
         return true
     }
 

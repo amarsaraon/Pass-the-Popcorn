@@ -16,9 +16,6 @@ class PickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        let realmMovies = realm.objects(MovieData.self)
-        loadMovies(realmMovies: realmMovies)
     }
     
     override func viewWillAppear(_ animated: Bool) {
