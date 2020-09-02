@@ -40,15 +40,24 @@ class PickerViewController: UIViewController {
     }
     
     func paintSquares() {
-        for i in 0...doneDict.count - 1 {
-            print(doneDict[listOfMovies[i].facts[0]])
-            if doneDict[listOfMovies[i].facts[0]] == true {
-                if let button = view.viewWithTag(i) as? UIButton {
+        let movieSquares = realm.objects(MovieData.self)
+        for m in movieSquares {
+            if m.done == true {
+                let t = findTag(name: m.movieName)
+                if let button = view.viewWithTag(t) as? UIButton {
                     button.backgroundColor = UIColor.red
                     button.isEnabled = false
-                    //button.titleLabel?.text = "✓"
                 }
             }
         }
+    }
+    
+    func findTag(name: String) -> Int {
+        for i in 1...listOfMovies.count{
+            if listOfMovies[i - 1].facts[0] == name {
+                return i
+            }
+        }
+        fatalError("Cannot movie tag")
     }
 }
