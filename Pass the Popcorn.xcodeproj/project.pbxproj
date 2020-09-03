@@ -24,6 +24,7 @@
 		C3B9865524F82B1E00C370D5 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9865424F82B1E00C370D5 /* ResultViewController.swift */; };
 		C3EC918B24FEA1B200AAE08B /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EC918A24FEA1B200AAE08B /* PickerViewController.swift */; };
 		C3EE6E0824F5674700CD3F58 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE6E0724F5674700CD3F58 /* SearchViewController.swift */; };
+		C3F63B162501799A00C78EF0 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F63B152501799A00C78EF0 /* CategoryViewController.swift */; };
 		FE8200AECA3F53B1D34776CD /* Pods_Pass_the_Popcorn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B18E045959341B98CFC6839 /* Pods_Pass_the_Popcorn.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		C3B9865424F82B1E00C370D5 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultViewController.swift; path = ../View/ResultViewController.swift; sourceTree = "<group>"; };
 		C3EC918A24FEA1B200AAE08B /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PickerViewController.swift; path = "Pass the Popcorn/View/PickerViewController.swift"; sourceTree = SOURCE_ROOT; };
 		C3EE6E0724F5674700CD3F58 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = "Pass the Popcorn/View/SearchViewController.swift"; sourceTree = SOURCE_ROOT; };
+		C3F63B152501799A00C78EF0 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		C3181B4024F42AB6008C1F2E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C3F63B152501799A00C78EF0 /* CategoryViewController.swift */,
 				C3EC918A24FEA1B200AAE08B /* PickerViewController.swift */,
 				C3B9865424F82B1E00C370D5 /* ResultViewController.swift */,
 				C3EE6E0724F5674700CD3F58 /* SearchViewController.swift */,
@@ -266,6 +269,7 @@
 			files = (
 				C389377A2500280D00832E6D /* LoadMovies.swift in Sources */,
 				C318501924FFF1A900D06104 /* MovieData.swift in Sources */,
+				C3F63B162501799A00C78EF0 /* CategoryViewController.swift in Sources */,
 				C3A09E7124F41A600016C491 /* TilesViewController.swift in Sources */,
 				C3EE6E0824F5674700CD3F58 /* SearchViewController.swift in Sources */,
 				C3A3478F24F6C231008B6A57 /* MovieExamples.swift in Sources */,

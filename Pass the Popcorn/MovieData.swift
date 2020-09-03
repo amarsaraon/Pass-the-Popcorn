@@ -11,10 +11,12 @@ import RealmSwift
 
 class MovieData: Object {
     @objc dynamic var movieName = ""
+    @objc dynamic var category = 0
     @objc dynamic var done = false
     
-    required convenience init(_ name: String) {
+    required convenience init(_ name: String, _ categoryNum: Int) {
         self.init()
         movieName = name
+        category = categoryNum
     }
 }

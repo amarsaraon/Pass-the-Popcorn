@@ -112,6 +112,35 @@
             </objects>
             <point key="canvasLocation" x="1873.913043478261" y="140.625"/>
         </scene>
+        <!--Category View Controller-->
+        <scene sceneID="lUQ-I8-KsT">
+            <objects>
+                <viewController id="YvT-s8-Xdp" customClass="CategoryViewController" customModule="Pass_the_Popcorn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qNR-EM-aFP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IsJ-8W-xBG">
+                                <rect key="frame" x="166" y="369" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="YvT-s8-Xdp" eventType="touchUpInside" id="FNX-W2-iqC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="N1J-rs-oPV"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mPZ-o3-77t"/>
+                    <connections>
+                        <segue destination="zQg-eL-ahE" kind="show" identifier="goToPicker" id="503-4t-kOS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kqO-lg-5GJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-565" y="141"/>
+        </scene>
         <!--Picker View Controller-->
         <scene sceneID="1UO-NI-Uff">
             <objects>
@@ -259,12 +288,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="zQg-eL-ahE" kind="relationship" relationship="rootViewController" id="Sk2-HL-TyN"/>
+                        <segue destination="YvT-s8-Xdp" kind="relationship" relationship="rootViewController" id="fjk-yu-lzZ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vnK-9M-UHk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-554" y="139"/>
+            <point key="canvasLocation" x="-1354" y="139"/>
         </scene>
     </scenes>
     <resources>

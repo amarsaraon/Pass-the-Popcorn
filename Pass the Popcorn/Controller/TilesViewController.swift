@@ -32,7 +32,9 @@ class TilesViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
         searchTextField.text = ""
+        guessButton.isEnabled = false
     }
 
     @IBAction func addCategoryPressed(_ sender: UIButton) {

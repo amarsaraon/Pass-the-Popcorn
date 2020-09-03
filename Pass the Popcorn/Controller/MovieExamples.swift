@@ -16,7 +16,12 @@ private var bladeRunner = Movie(t: "Blade Runner", y: "1982", g1: "Sci-Fi", g2: 
 
 private var toyStory = Movie(t: "Toy Story", y: "1995", g1: "Animation", g2: "Adventure", s: "90's: San Francisco Bay Area", a1: "Tom Hanks", a2: "Tim Allen", a3: "Annie Potts", c1: "Woody", c2: "Buzz Lightyear", c3: "Andy", d: "John Lassiter", p: "A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room.", q: "To infinity and beyond")
 
-var listOfMovies = [backToTheFuture, dieHard, bladeRunner, toyStory]
+private var listOne = [backToTheFuture]
+private var listTwo = [dieHard]
+private var listThree = [bladeRunner]
+private var listFour = [toyStory]
+
+var listOfMovies = [listOne, listTwo, listThree, listFour]
 
 var posterDict = ["Back to the Future": [64517], "Die Hard": [16120], "Blade Runner": [15041], "Toy Story": [9911]]
 

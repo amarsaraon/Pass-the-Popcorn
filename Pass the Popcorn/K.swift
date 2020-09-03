@@ -15,6 +15,7 @@ struct K {
     static let searchTransitionName = "goToSearch"
     static let resultTransitionName = "goToResult"
     static let tilesTransitionName = "goToTiles"
+    static let pickerTransitionName = "goToPicker"
     
     struct ResultButtonLabels {
         static let playAgain = "Play Again"

@@ -14,15 +14,17 @@ let realm = try! Realm()
 //MARK: - Load Movies Method
 
 func loadMovies(realmMovies: Results<MovieData>) {
-    for movie in listOfMovies {
-        let movieNames = realmMovies.filter("movieName == %@", movie.facts[0])
-        if movieNames.count == 0 {
-            do {
-                try realm.write {
-                    realm.add(MovieData(movie.facts[0]))
+    for i in 0...listOfMovies.count - 1 {
+        for movie in listOfMovies[i] {
+            let movieNames = realmMovies.filter("movieName == %@", movie.facts[0])
+            if movieNames.count == 0 {
+                do {
+                    try realm.write {
+                        realm.add(MovieData(movie.facts[0], i))
+                    }
+                } catch {
+                    print("Error adding movies to realm, \(error)")
                 }
-            } catch {
-                print("Error adding movies to realm, \(error)")
             }
         }
     }
