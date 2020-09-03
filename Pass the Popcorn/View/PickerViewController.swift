@@ -12,11 +12,13 @@ import RealmSwift
 class PickerViewController: UIViewController {
 
     var numPressed: Int?
+    var categoryNum: Int?
     var categoryList: [Movie]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        categoryList = listOfMovies[categoryNum!]
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,7 +40,7 @@ class PickerViewController: UIViewController {
     }
     
     func paintSquares() {
-        let movieSquares = realm.objects(MovieData.self).filter("category == %@", 2)
+        let movieSquares = realm.objects(MovieData.self).filter("category == %@", categoryNum!)
         for m in movieSquares {
             if m.done == true {
                 let t = findTag(name: m.movieName)
