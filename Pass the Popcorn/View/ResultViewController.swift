@@ -49,7 +49,7 @@ class ResultViewController: UIViewController {
 
     @IBAction func returnButtonPressed(_ sender: UIButton) {
         if sender.titleLabel?.text == K.ResultButtonLabels.playAgain {
-            navigationController?.popToRootViewController(animated: true)
+            backTwo()
         } else {
             navigationController?.popViewController(animated: true)
         }
@@ -100,6 +100,11 @@ class ResultViewController: UIViewController {
     func changeLabelColor(color: UIColor) {
         correctLabel.textColor = textColor
         movieLabel.textColor = textColor
+    }
+    
+    func backTwo() {
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
     }
     
 }

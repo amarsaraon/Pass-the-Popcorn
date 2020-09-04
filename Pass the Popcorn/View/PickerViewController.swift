@@ -22,6 +22,7 @@ class PickerViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
         paintSquares()
     }
     
@@ -42,11 +43,11 @@ class PickerViewController: UIViewController {
     func paintSquares() {
         let movieSquares = realm.objects(MovieData.self).filter("category == %@", categoryNum!)
         for m in movieSquares {
-            if m.done == false {
+            if m.done == true {
                 let t = findTag(name: m.movieName)
                 if let button = view.viewWithTag(t) as? UIButton {
-                    button.isEnabled = true
-                    button.backgroundColor = UIColor.gray
+                    button.isEnabled = false
+                    button.backgroundColor = UIColor.green
                 }
             }
         }
