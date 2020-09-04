@@ -81,7 +81,12 @@ extension TilesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! TileCell
         cell.categoryLabel.text = tiles[indexPath.row].category
-        cell.descriptionLabel.text = tiles[indexPath.row].description
+        if cell.categoryLabel.text == "Quote" {
+            cell.descriptionLabel.text = "\"\(tiles[indexPath.row].description)\""
+        } else {
+            cell.descriptionLabel.text = "\(tiles[indexPath.row].description)"
+        }
+        
         cell.changeColor(category: cell.categoryLabel.text!)
         return cell
     }

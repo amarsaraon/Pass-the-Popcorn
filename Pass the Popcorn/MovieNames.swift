@@ -18,4 +18,7 @@ enum MovieNames: String, CaseIterable {
     case jaws = "Jaws"
     case getOut = "Get Out"
     case lifeOfBrian = "Monty Python's Life of Brian"
+    case theSocialNetwork = "The Social Network"
+    case jurassicWorld = "Jurassic World"
+    case avatar = "Avatar"
 }

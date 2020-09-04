@@ -26,16 +26,22 @@ private var getOut = Movie(t: MovieNames.getOut.rawValue, y: "2017", g1: "Horror
 
 private var lifeOfBrian = Movie(t: MovieNames.lifeOfBrian.rawValue, y: "1979", g1: "Satire", g2: "Historical Fiction", s: "Year 0: Roman Province of Judea", a1: "John Cleese", a2: "Graham Chapman", a3: "Eric Idle", c1: "Stan (Loretta)", c2: "Brian Cohen", c3: "Biggus Dickus", d: "Terry Gilliam", p: "A man born on the original Christmas in the stable next door to Jesus Christ must spends his life being mistaken for a messiah.", q: "All right, but apart from the sanitation, medicine, education, wine, public order, irrigation, roads, the fresh water system and public health, what have the Romans ever done for us?")
 
-private var newBB = [blackPanther, theDarkKnight]
+private var theSocialNetwork = Movie(t: MovieNames.theSocialNetwork.rawValue, y: "2010", g1: "Biography", g2: "Drama", s: "Early 2000's USA", a1: "Jesse Eisenberg", a2: "Andrew Garfield", a3: "Justin Timberlake", c1: "Mark Zuckerberg", c2: "Eduardo Saverin", c3: "Dustin Moskovitz", d: "David Fincher", p: "As a college student creates a social networking site he is sued by the twins who claimed he stole their idea and by the co-founder who was later squeezed out of the business.", q: "You better lawyer up asshole, because I'm not coming back for 30%, I'm coming back for everything.")
+
+private var jurassicWorld = Movie(t: MovieNames.jurassicWorld.rawValue, y: "2015", g1: "Action", g2: "Sci-Fi", s: "Fictional Central American island of Isla Nublar", a1: "Chris Pratt", a2: "Bryce Dallas Howard", a3: "Vincent D'Onofrio", c1: "Owen Grady", c2: "Claire Dearing", c3: "Henry Wu", d: "Colin Trevorrow", p: "A new theme park creates a genetically modified hybrid dinosaur which escapes containment and goes on a killing spree.", q: "Animals raised in isolation aren't always the most functional.")
+
+private var avatar = Movie(t: MovieNames.avatar.rawValue, y: "2009", g1: "Action", g2: "Fantasy", s: "Fictional Planet Pandora", a1: "Sam Worthington", a2: "Zoe Saldana", a3: "Sigourney Weaver", c1: "Jake Sully", c2: "Neytiri", c3: "Colonel Miles Quaritch", d: "James Cameron", p: "A paraplegic Marine dispatched to a unique mission becomes torn between following his orders and protecting the world he feels is his home.", q: "Now that I have seen the horrors of space mining, I’m not just blue on the outside.")
+
+private var newBB = [blackPanther, theDarkKnight, jurassicWorld, avatar]
 private var modernClassics = [backToTheFuture, toyStory, dieHard, bladeRunner]
-private var newClassics = [getOut]
+private var newClassics = [getOut, theSocialNetwork]
 private var greatComedies = [lifeOfBrian]
 
 var listOfMovies = [newBB, modernClassics, newClassics, greatComedies]
 
 var categoryNames = ["21st Century Blockbusters", "1975-1999 Classics", "21st Century Greats", "Great Comedies"]
 
-var posterDict = [MovieNames.backToTheFuture.rawValue: [64517], MovieNames.dieHard.rawValue: [16120], MovieNames.bladeRunner.rawValue: [15041], MovieNames.toyStory.rawValue: [9911], MovieNames.blackPanther.rawValue: [6915], MovieNames.jaws.rawValue: [8289], MovieNames.theDarkKnight.rawValue: [21708], MovieNames.getOut.rawValue: [12708], MovieNames.lifeOfBrian.rawValue: [15090]]
+var posterDict = [MovieNames.backToTheFuture.rawValue: [64517], MovieNames.dieHard.rawValue: [16120], MovieNames.bladeRunner.rawValue: [15041], MovieNames.toyStory.rawValue: [9911], MovieNames.blackPanther.rawValue: [6915], MovieNames.jaws.rawValue: [8289], MovieNames.theDarkKnight.rawValue: [21708], MovieNames.getOut.rawValue: [12708], MovieNames.lifeOfBrian.rawValue: [15090], MovieNames.theSocialNetwork.rawValue: [64097], MovieNames.jurassicWorld.rawValue: [7006], MovieNames.avatar.rawValue: [24287]]
 
 //var fullMovieList = ["Back to the Future", "Se7en", "Die Hard", "Star Wars: Episode IV - A New Hope", "Star Wars: Episode V - The Empire Strikes Back", "Star Wars: Episode V - Return of the Jedi", "Blade Runner", "Alien", "Life of Brian", "Parasite", "Taxi Driver", "Her", "Hereditary", "The Matrix", "There Will Be Blood", "WALL-E", "Do the Right Thing", "Psycho", "Get Out", "Galaxy Quest", "Toy Story", "Toy Story 2", "Toy Story 3", "Toy Story 4", "Ex Machina", "Jaws", "The Incredibles", "21 Jump Street", "The Big Short", "Goodfellas", "Holes", "Fargo", "Uncut Gems", "Dunkirk", "Black Hawk Down", "Spotlight", "The Dark Knight", "Tropic Thunder", "Inception", "Coco", "Black Panther"]
 
@@ -46,4 +52,10 @@ func makeFullMovieList() {
         fullMovieList.append(name.rawValue)
     }
 }
-//var fullMovieList = [MovieNames.backToTheFuture, MovieNames.dieHard, MovieNames.bladeRunner, MovieNames.toyStory, MovieNames.blackPanther, MovieNames.jaws, MovieNames.theDarkKnight, MovieNames.getOut, MovieNames.lifeOfBrian]
+
+// 1. add to MovieNames.swift
+// 2. create private var
+// 3. add to category list
+// 4. find to poster number and add to posterDict
+
+
