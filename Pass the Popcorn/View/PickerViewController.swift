@@ -42,11 +42,11 @@ class PickerViewController: UIViewController {
     func paintSquares() {
         let movieSquares = realm.objects(MovieData.self).filter("category == %@", categoryNum!)
         for m in movieSquares {
-            if m.done == true {
+            if m.done == false {
                 let t = findTag(name: m.movieName)
                 if let button = view.viewWithTag(t) as? UIButton {
-                    button.backgroundColor = UIColor.red
-                    button.isEnabled = false
+                    button.isEnabled = true
+                    button.backgroundColor = UIColor.gray
                 }
             }
         }

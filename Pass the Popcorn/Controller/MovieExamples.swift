@@ -26,22 +26,3 @@ var listOfMovies = [listOne, listTwo, listThree, listFour]
 var posterDict = ["Back to the Future": [64517], "Die Hard": [16120], "Blade Runner": [15041], "Toy Story": [9911]]
 
 var fullMovieList = ["Back to the Future", "Se7en", "Die Hard", "Star Wars: Episode IV - A New Hope", "Star Wars: Episode V - The Empire Strikes Back", "Star Wars: Episode V - Return of the Jedi", "Blade Runner", "Alien", "Life of Brian", "Parasite", "Taxi Driver", "Her", "Hereditary", "The Matrix", "There Will Be Blood", "WALL-E", "Do the Right Thing", "Psycho", "Get Out", "Galaxy Quest", "Toy Story", "Toy Story 2", "Toy Story 3", "Toy Story 4", "Ex Machina", "Jaws", "The Incredibles", "21 Jump Street", "The Big Short", "Goodfellas", "Holes", "Fargo", "Uncut Gems", "Dunkirk", "Black Hawk Down", "Spotlight", "The Dark Knight", "Tropic Thunder", "Inception", "Coco"]
-
-//var fullMovieList = [String]()
-//
-//func createMovieList() {
-//    for movie in listOfMovies {
-//        fullMovieList.append(movie.facts[0])
-//    }
-//}
-
-//var movieNums = Array(0...listOfMovies.count - 1)
-//
-//func chooseMovie() -> (Movie, Bool) {
-//    if let index = movieNums.randomElement() {
-//        movieNums.removeAll(where: { $0 == index })
-//        let isDone = movieNums.count == 0
-//        return (listOfMovies[index], isDone)
-//    }
-//    fatalError("Picked movie from empty list")
-//}
