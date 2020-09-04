@@ -21,4 +21,5 @@ struct K {
         static let playAgain = "Play Again"
         static let guessAgain = "Guess Again"
     }
+
 }

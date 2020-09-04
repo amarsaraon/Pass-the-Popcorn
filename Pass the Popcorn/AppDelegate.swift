@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let realmMovies = realm.objects(MovieData.self)
         loadMovies(realmMovies: realmMovies)
         
+        makeFullMovieList()
+        
         return true
     }
 
