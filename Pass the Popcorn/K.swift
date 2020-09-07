@@ -12,6 +12,8 @@ struct K {
     
     static let cellIdentifier = "ReusableCell"
     static let cellNibName = "TileCell"
+    static let categoryCellIdentifier = "CategoryReusableCell"
+    static let categoryCellName = "CategoryCell"
     static let searchTransitionName = "goToSearch"
     static let resultTransitionName = "goToResult"
     static let tilesTransitionName = "goToTiles"
