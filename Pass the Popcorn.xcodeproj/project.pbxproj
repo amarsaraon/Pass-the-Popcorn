@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C316D4B12506962000A5F627 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C316D4AF2506962000A5F627 /* CategoryCell.swift */; };
+		C316D4B22506962000A5F627 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C316D4B02506962000A5F627 /* CategoryCell.xib */; };
 		C3181B3824F426E4008C1F2E /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3181B3724F426E4008C1F2E /* K.swift */; };
 		C3181B3B24F42A89008C1F2E /* TileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3181B3924F42A89008C1F2E /* TileCell.swift */; };
 		C3181B3C24F42A89008C1F2E /* TileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3181B3A24F42A89008C1F2E /* TileCell.xib */; };
@@ -33,6 +35,8 @@
 		3B18E045959341B98CFC6839 /* Pods_Pass_the_Popcorn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pass_the_Popcorn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		865394D497BB48C454887631 /* Pods-Pass the Popcorn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pass the Popcorn.release.xcconfig"; path = "Target Support Files/Pods-Pass the Popcorn/Pods-Pass the Popcorn.release.xcconfig"; sourceTree = "<group>"; };
 		B644B366FE3FF25A8694D016 /* Pods-Pass the Popcorn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pass the Popcorn.debug.xcconfig"; path = "Target Support Files/Pods-Pass the Popcorn/Pods-Pass the Popcorn.debug.xcconfig"; sourceTree = "<group>"; };
+		C316D4AF2506962000A5F627 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		C316D4B02506962000A5F627 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		C3181B3724F426E4008C1F2E /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		C3181B3924F42A89008C1F2E /* TileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCell.swift; sourceTree = "<group>"; };
 		C3181B3A24F42A89008C1F2E /* TileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TileCell.xib; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 				C375CDF32502A7E5001CF938 /* Main.storyboard */,
 				C3181B3924F42A89008C1F2E /* TileCell.swift */,
 				C3181B3A24F42A89008C1F2E /* TileCell.xib */,
+				C316D4AF2506962000A5F627 /* CategoryCell.swift */,
+				C316D4B02506962000A5F627 /* CategoryCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -214,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C316D4B22506962000A5F627 /* CategoryCell.xib in Resources */,
 				C3A09E7924F41A610016C491 /* LaunchScreen.storyboard in Resources */,
 				C3A09E7624F41A610016C491 /* Assets.xcassets in Resources */,
 				C3181B3C24F42A89008C1F2E /* TileCell.xib in Resources */,
@@ -281,6 +288,7 @@
 				C3B9865524F82B1E00C370D5 /* ResultViewController.swift in Sources */,
 				C3A09E6F24F41A600016C491 /* SceneDelegate.swift in Sources */,
 				C394D6AF2502C655005707F2 /* MovieNames.swift in Sources */,
+				C316D4B12506962000A5F627 /* CategoryCell.swift in Sources */,
 				C3EC918B24FEA1B200AAE08B /* PickerViewController.swift in Sources */,
 				C3A09E8124F424A00016C491 /* Tile.swift in Sources */,
 				C395F20F24F6AD25003D528C /* Movie.swift in Sources */,
