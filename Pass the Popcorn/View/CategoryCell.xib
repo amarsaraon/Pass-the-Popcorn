@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="392" height="143"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="lock.filllock.filllock.lock.fill" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Krh-hO-u7z">
-                                <rect key="frame" x="8" y="62.5" width="167" height="18.5"/>
+                                <rect key="frame" x="20" y="62.5" width="167" height="18.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="170" id="B5Y-T2-jjE"/>
                                 </constraints>
@@ -28,16 +28,17 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nNr-c6-2Qg">
-                                <rect key="frame" x="334" y="46.5" width="50" height="50"/>
+                                <rect key="frame" x="342" y="59" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="gth-uM-maw"/>
-                                    <constraint firstAttribute="height" constant="50" id="uPA-EN-oxV"/>
+                                    <constraint firstAttribute="width" constant="25" id="eYs-pW-szD"/>
+                                    <constraint firstAttribute="height" constant="25" id="sMz-el-WtC"/>
                                 </constraints>
                             </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WfS-Po-UPp">
-                                <rect key="frame" x="186" y="70.5" width="132" height="2"/>
+                                <rect key="frame" x="217" y="70.5" width="100" height="2"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="bcF-Te-lOc"/>
+                                    <constraint firstAttribute="width" constant="100" id="Cwn-Y2-T7B"/>
+                                    <constraint firstAttribute="height" constant="2" id="MU9-lB-ss9"/>
                                 </constraints>
                             </progressView>
                         </subviews>
@@ -46,12 +47,11 @@
                         <constraints>
                             <constraint firstItem="Krh-hO-u7z" firstAttribute="centerY" secondItem="nNr-c6-2Qg" secondAttribute="centerY" id="2qx-zI-iIB"/>
                             <constraint firstItem="nNr-c6-2Qg" firstAttribute="centerY" secondItem="yD7-5k-EXG" secondAttribute="centerY" id="D67-9k-7bX"/>
-                            <constraint firstAttribute="trailing" secondItem="nNr-c6-2Qg" secondAttribute="trailing" constant="8" id="GlC-fo-X76"/>
-                            <constraint firstItem="WfS-Po-UPp" firstAttribute="centerY" secondItem="yD7-5k-EXG" secondAttribute="centerY" id="LUR-cz-Ghc"/>
-                            <constraint firstItem="Krh-hO-u7z" firstAttribute="leading" secondItem="yD7-5k-EXG" secondAttribute="leading" constant="8" id="XWy-Ft-Wqi"/>
+                            <constraint firstItem="Krh-hO-u7z" firstAttribute="leading" secondItem="yD7-5k-EXG" secondAttribute="leading" constant="20" id="XWy-Ft-Wqi"/>
+                            <constraint firstItem="WfS-Po-UPp" firstAttribute="centerY" secondItem="yD7-5k-EXG" secondAttribute="centerY" id="csm-LA-Yzs"/>
                             <constraint firstItem="Krh-hO-u7z" firstAttribute="centerY" secondItem="yD7-5k-EXG" secondAttribute="centerY" id="gLQ-Uz-kWv"/>
-                            <constraint firstItem="WfS-Po-UPp" firstAttribute="leading" secondItem="yD7-5k-EXG" secondAttribute="leading" constant="186" id="qhg-Rk-uYx"/>
-                            <constraint firstAttribute="trailing" secondItem="WfS-Po-UPp" secondAttribute="trailing" constant="74" id="swU-c2-iRu"/>
+                            <constraint firstAttribute="trailing" secondItem="WfS-Po-UPp" secondAttribute="trailing" constant="75" id="qHY-jE-bFj"/>
+                            <constraint firstAttribute="trailing" secondItem="nNr-c6-2Qg" secondAttribute="trailing" constant="25" id="xTK-ar-SnW"/>
                         </constraints>
                     </view>
                 </subviews>

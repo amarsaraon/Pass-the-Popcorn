@@ -23,11 +23,26 @@ class CategoryViewController: UIViewController {
         tableView.register(UINib(nibName: K.categoryCellName, bundle: nil), forCellReuseIdentifier: K.categoryCellIdentifier)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.pickerTransitionName {
             let destinationVC = segue.destination as! PickerViewController
             destinationVC.categoryNum = categoryNumPressed
         }
+    }
+    
+    func findProgress(category: Int) -> Float {
+        let movies = realm.objects(MovieData.self).filter("category == %@", category)
+        var categoriesDone = 0
+        for movie in movies {
+            if movie.done {
+                categoriesDone += 1
+            }
+        }
+        return Float(categoriesDone)/Float(movies.count)
     }
     
 }
@@ -43,9 +58,11 @@ extension CategoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.categoryCellIdentifier, for: indexPath) as! CategoryCell
         cell.categoryText.text = categoryNames[indexPath.row]
+        cell.progressBar.progress = findProgress(category: indexPath.row)
+        cell.rightSideImage.image = UIImage(systemName: "lock.fill")
         return cell
     }
-    
+
 }
 
 //MARK: - Table View Delegate Methods
