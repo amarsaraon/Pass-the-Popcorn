@@ -57,9 +57,17 @@ extension CategoryViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.categoryCellIdentifier, for: indexPath) as! CategoryCell
-        cell.categoryText.text = categoryNames[indexPath.row]
-        cell.progressBar.progress = findProgress(category: indexPath.row)
-        cell.rightSideImage.image = UIImage(systemName: "lock.fill")
+        let category = categoryNames[indexPath.row]
+        if 3 >= categoryPoints[category]! { // change "3" to universal points system
+            cell.categoryText.text = category
+            cell.progressBar.progress = findProgress(category: indexPath.row)
+            cell.rightSideImage.image = UIImage(systemName: "arrowtriangle.right.fill")
+        } else {
+            cell.categoryText.text = category
+            cell.progressBar.isHidden = true
+            cell.rightSideImage.image = UIImage(systemName: "lock.fill")
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        }
         return cell
     }
 
@@ -71,8 +79,10 @@ extension CategoryViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        categoryNumPressed = indexPath.row
-        performSegue(withIdentifier: K.pickerTransitionName, sender: self)
+        if 3 >= categoryPoints[categoryNames[indexPath.row]]! {
+            categoryNumPressed = indexPath.row
+            performSegue(withIdentifier: K.pickerTransitionName, sender: self)
+        }
     }
     
 }

@@ -41,6 +41,8 @@ var listOfMovies = [newBB, modernClassics, newClassics, greatComedies]
 
 var categoryNames = ["21st Century Blockbusters", "1975-1999 Classics", "21st Century Greats", "Great Comedies"]
 
+var categoryPoints = ["21st Century Blockbusters": 0, "1975-1999 Classics": 2, "21st Century Greats": 4, "Great Comedies": 6]
+
 var posterDict = [MovieNames.backToTheFuture.rawValue: [64517], MovieNames.dieHard.rawValue: [16120], MovieNames.bladeRunner.rawValue: [15041], MovieNames.toyStory.rawValue: [9911], MovieNames.blackPanther.rawValue: [6915], MovieNames.jaws.rawValue: [8289], MovieNames.theDarkKnight.rawValue: [21708], MovieNames.getOut.rawValue: [12708], MovieNames.lifeOfBrian.rawValue: [15090], MovieNames.theSocialNetwork.rawValue: [64097], MovieNames.jurassicWorld.rawValue: [7006], MovieNames.avatar.rawValue: [24287]]
 
 //var fullMovieList = ["Back to the Future", "Se7en", "Die Hard", "Star Wars: Episode IV - A New Hope", "Star Wars: Episode V - The Empire Strikes Back", "Star Wars: Episode V - Return of the Jedi", "Blade Runner", "Alien", "Life of Brian", "Parasite", "Taxi Driver", "Her", "Hereditary", "The Matrix", "There Will Be Blood", "WALL-E", "Do the Right Thing", "Psycho", "Get Out", "Galaxy Quest", "Toy Story", "Toy Story 2", "Toy Story 3", "Toy Story 4", "Ex Machina", "Jaws", "The Incredibles", "21 Jump Street", "The Big Short", "Goodfellas", "Holes", "Fargo", "Uncut Gems", "Dunkirk", "Black Hawk Down", "Spotlight", "The Dark Knight", "Tropic Thunder", "Inception", "Coco", "Black Panther"]
