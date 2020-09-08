@@ -38,7 +38,8 @@ class ResultViewController: UIViewController {
                 correctLabel.text = "Correct!"
                 movieLabel.text = title
                 returnButton.setTitle(K.ResultButtonLabels.playAgain, for: .normal)
-                updateMovies(movieName: movieTitle!)
+                updateMovies(movieName: title)
+                deleteTileData(movieName: title)
             } else {
                 correctLabel.text = "Incorrect :("
                 movieLabel.text = ""
@@ -54,6 +55,25 @@ class ResultViewController: UIViewController {
             navigationController?.popViewController(animated: true)
         }
     }
+    
+    func deleteTileData(movieName: String) {
+        let chosenMovie = realm.objects(TileData.self).filter("movieName == %@", movieName)[0]
+        do {
+            try realm.write {
+                realm.delete(chosenMovie)
+            }
+        } catch {
+            print("Error deleting tile data, \(error)")
+        }
+    }
+    
+    func backTwo() {
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
+    }
+    
+    
+//MARK: - Poster and Background Color Methods
     
     func getPoster() {
         if let currentPoster = moviePosterImage {
@@ -101,10 +121,5 @@ class ResultViewController: UIViewController {
         correctLabel.textColor = textColor
         movieLabel.textColor = textColor
     }
-    
-    func backTwo() {
-        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
-        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
-    }
-    
+
 }

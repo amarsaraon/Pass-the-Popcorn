@@ -25,6 +25,7 @@
 		C3A09E8124F424A00016C491 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A09E8024F424A00016C491 /* Tile.swift */; };
 		C3A3478F24F6C231008B6A57 /* MovieExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A3478E24F6C231008B6A57 /* MovieExamples.swift */; };
 		C3B9865524F82B1E00C370D5 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9865424F82B1E00C370D5 /* ResultViewController.swift */; };
+		C3C292AC2507FB310000A6F0 /* TileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C292AB2507FB310000A6F0 /* TileData.swift */; };
 		C3EC918B24FEA1B200AAE08B /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EC918A24FEA1B200AAE08B /* PickerViewController.swift */; };
 		C3EE6E0824F5674700CD3F58 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE6E0724F5674700CD3F58 /* SearchViewController.swift */; };
 		C3F63B162501799A00C78EF0 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F63B152501799A00C78EF0 /* CategoryViewController.swift */; };
@@ -55,6 +56,7 @@
 		C3A09E8024F424A00016C491 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		C3A3478E24F6C231008B6A57 /* MovieExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieExamples.swift; path = "Pass the Popcorn/Controller/MovieExamples.swift"; sourceTree = SOURCE_ROOT; };
 		C3B9865424F82B1E00C370D5 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultViewController.swift; path = ../View/ResultViewController.swift; sourceTree = "<group>"; };
+		C3C292AB2507FB310000A6F0 /* TileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileData.swift; sourceTree = "<group>"; };
 		C3EC918A24FEA1B200AAE08B /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PickerViewController.swift; path = "Pass the Popcorn/View/PickerViewController.swift"; sourceTree = SOURCE_ROOT; };
 		C3EE6E0724F5674700CD3F58 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = "Pass the Popcorn/View/SearchViewController.swift"; sourceTree = SOURCE_ROOT; };
 		C3F63B152501799A00C78EF0 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				C3A09E8024F424A00016C491 /* Tile.swift */,
 				C395F20E24F6AD25003D528C /* Movie.swift */,
 				C318501824FFF1A900D06104 /* MovieData.swift */,
+				C3C292AB2507FB310000A6F0 /* TileData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				C394D6AF2502C655005707F2 /* MovieNames.swift in Sources */,
 				C316D4B12506962000A5F627 /* CategoryCell.swift in Sources */,
 				C3EC918B24FEA1B200AAE08B /* PickerViewController.swift in Sources */,
+				C3C292AC2507FB310000A6F0 /* TileData.swift in Sources */,
 				C3A09E8124F424A00016C491 /* Tile.swift in Sources */,
 				C395F20F24F6AD25003D528C /* Movie.swift in Sources */,
 				C3181B3B24F42A89008C1F2E /* TileCell.swift in Sources */,

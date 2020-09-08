@@ -16,16 +16,14 @@ class TilesViewController: UIViewController {
     @IBOutlet weak var guessButton: UIButton!
     
     var movieChosen: Movie?
+    var tileDataChosen: TileData?
     var tiles = [Tile]()
-    var allTilesDone = false
     var isCorrect = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for _ in 0...2 {
-            addTile()
-        }
+        addTiles()
         tableView.dataSource = self
         searchTextField.delegate = self
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
@@ -38,7 +36,8 @@ class TilesViewController: UIViewController {
     }
 
     @IBAction func addCategoryPressed(_ sender: UIButton) {
-        addTile()
+        tileDataChosen?.pickTile()
+        addTileData()
     }
     
     @IBAction func guessPressed(_ sender: UIButton) {
@@ -51,20 +50,32 @@ class TilesViewController: UIViewController {
             performSegue(withIdentifier: K.resultTransitionName, sender: self)
         }
     }
-    
-    func addTile() {
-        if allTilesDone == false {
-            var tileCategory: String
-            var tileDescription: String
-            var isDone: Bool
-            (tileCategory, tileDescription, isDone) = movieChosen!.pickTile()
-            let newTile = Tile(category: tileCategory, description: tileDescription)
-            tiles.insert(newTile, at: 0)
-            tableView.reloadData()
-            if isDone == true {
-                allTilesDone = true
-                addButton.isEnabled = false
+
+    func addTiles() {
+        let tileData = realm.objects(TileData.self).filter("movieName == %@", movieChosen!.facts[0])
+        if tileData.count == 0 {
+            do {
+                try realm.write {
+                    tileDataChosen = TileData(movieChosen!.facts[0])
+                    realm.add(tileDataChosen!)
+                }
+            } catch {
+                print("Error adding tile data to realm, \(error)")
             }
+        } else {
+            tileDataChosen = tileData[0]
+        }
+        addTileData()
+    }
+    
+    func addTileData() {
+        tiles.removeAll()
+        tileDataChosen!.tilesChosen.forEach { (i) in
+            tiles.append(Tile(category: movieCategories[i], description: (movieChosen?.facts[i])!))
+        }
+        tableView.reloadData()
+        if tileDataChosen?.isDone == true {
+            addButton.isEnabled = false
         }
     }
     

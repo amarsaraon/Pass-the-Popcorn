@@ -13,9 +13,6 @@ let movieCategories = ["Title", "Year Released", "Genre", "Genre", "Setting", "A
 struct Movie {
     
     var facts = [String]()
-    var nums = Array(1...movieCategories.count - 1)
-    var n = 0
-    var isDone = false
     
     init(t: String, y: String, g1: String, g2: String, s: String, a1: String, a2: String, a3: String, c1: String, c2: String, c3: String, d: String, p: String, q: String) {
         facts.append(t)
@@ -32,17 +29,6 @@ struct Movie {
         facts.append(d)
         facts.append(p)
         facts.append(q)
-    }
- 
-    mutating func pickTile() -> (String, String, Bool) {
-        if isDone == false {
-            if let index = nums.randomElement() {
-                nums.removeAll(where: { $0 == index } )
-                isDone = !(nums.count > n)
-                return (movieCategories[index], self.facts[index], isDone)
-            }
-        }
-        return ("", "", true)
     }
     
 }
