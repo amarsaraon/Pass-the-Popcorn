@@ -34,21 +34,29 @@ class TilesViewController: UIViewController {
         searchTextField.text = ""
         guessButton.isEnabled = false
     }
+    
+    @IBAction func guessPressed(_ sender: UIButton) {
+        if let title = movieChosen?.facts[0] {
+            if searchTextField.text == title{
+                //print("Correct!")
+                isCorrect = true
+                points += pointsDict[(tileDataChosen?.tilesChosen.count)!] ?? 0
+                defaults.set(points, forKey: K.pointsKey)
+                deleteTileData(movieName: title)
+                updateMovies(movieName: title)
+                performSegue(withIdentifier: K.resultTransitionName, sender: self)
+            } else {
+                //print("Incorrect :(")
+                performSegue(withIdentifier: K.resultTransitionName, sender: self)
+            }
+        }
+    }
 
+    //MARK: - Add Tiles Categories
+    
     @IBAction func addCategoryPressed(_ sender: UIButton) {
         tileDataChosen?.pickTile()
         addTileData()
-    }
-    
-    @IBAction func guessPressed(_ sender: UIButton) {
-        if movieChosen!.facts[0] == searchTextField.text {
-            //print("Correct!")
-            isCorrect = true
-            performSegue(withIdentifier: K.resultTransitionName, sender: self)
-        } else {
-            //print("Incorrect :(")
-            performSegue(withIdentifier: K.resultTransitionName, sender: self)
-        }
     }
 
     func addTiles() {
@@ -76,6 +84,16 @@ class TilesViewController: UIViewController {
         tableView.reloadData()
         if tileDataChosen?.isDone == true {
             addButton.isEnabled = false
+        }
+    }
+    
+    func deleteTileData(movieName: String) {
+        do {
+            try realm.write {
+                realm.delete(tileDataChosen!)
+            }
+        } catch {
+            print("Error deleting tile data, \(error)")
         }
     }
     

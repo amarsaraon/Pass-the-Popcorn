@@ -22,6 +22,7 @@ class PickerViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print(points)
         navigationController?.setNavigationBarHidden(false, animated: true)
         paintSquares()
     }

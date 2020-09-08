@@ -38,8 +38,6 @@ class ResultViewController: UIViewController {
                 correctLabel.text = "Correct!"
                 movieLabel.text = title
                 returnButton.setTitle(K.ResultButtonLabels.playAgain, for: .normal)
-                updateMovies(movieName: title)
-                deleteTileData(movieName: title)
             } else {
                 correctLabel.text = "Incorrect :("
                 movieLabel.text = ""
@@ -53,17 +51,6 @@ class ResultViewController: UIViewController {
             backTwo()
         } else {
             navigationController?.popViewController(animated: true)
-        }
-    }
-    
-    func deleteTileData(movieName: String) {
-        let chosenMovie = realm.objects(TileData.self).filter("movieName == %@", movieName)[0]
-        do {
-            try realm.write {
-                realm.delete(chosenMovie)
-            }
-        } catch {
-            print("Error deleting tile data, \(error)")
         }
     }
     

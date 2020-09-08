@@ -10,6 +10,8 @@ import Foundation
 import RealmSwift
 
 let realm = try! Realm()
+let defaults = UserDefaults.standard
+var points = defaults.integer(forKey: K.pointsKey)
 
 //MARK: - Load Movies Method
 

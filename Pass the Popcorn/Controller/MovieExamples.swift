@@ -55,6 +55,8 @@ func makeFullMovieList() {
     }
 }
 
+let pointsDict = [3: 5, 4: 3, 5: 2, 6: 1]
+
 // 1. add to MovieNames.swift
 // 2. create private var
 // 3. add to category list
