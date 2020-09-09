@@ -14,6 +14,8 @@ class TilesViewController: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var guessButton: UIButton!
+    @IBOutlet weak var pointsLabel: UILabel!
+    
     
     var movieChosen: Movie?
     var tileDataChosen: TileData?
@@ -22,7 +24,7 @@ class TilesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         addTiles()
         tableView.dataSource = self
         searchTextField.delegate = self
@@ -34,6 +36,7 @@ class TilesViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
         searchTextField.text = ""
         guessButton.isEnabled = false
+        rewritePointsGained()
     }
     
     @IBAction func guessPressed(_ sender: UIButton) {
@@ -53,11 +56,16 @@ class TilesViewController: UIViewController {
         }
     }
 
+    func rewritePointsGained() {
+        pointsLabel.text = "Points gained from correct guess: \(pointsDict[(tileDataChosen?.tilesChosen.count)!] ?? 0)"
+    }
+
     //MARK: - Add Tiles Categories
     
     @IBAction func addCategoryPressed(_ sender: UIButton) {
         tileDataChosen?.pickTile()
         addTileData()
+        rewritePointsGained()
     }
 
     func addTiles() {

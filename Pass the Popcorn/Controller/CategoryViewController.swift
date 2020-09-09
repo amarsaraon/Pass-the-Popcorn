@@ -11,7 +11,7 @@ import UIKit
 class CategoryViewController: UIViewController {
 
     var categoryNumPressed: Int?
-    
+    @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -25,6 +25,7 @@ class CategoryViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         setUpViewController(vc: self)
+        pointsLabel.text = "Points: \(points)"
         tableView.reloadData()
     }
     
