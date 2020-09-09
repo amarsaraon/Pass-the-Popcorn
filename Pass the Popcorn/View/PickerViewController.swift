@@ -24,7 +24,9 @@ class PickerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         setUpViewController(vc: self)
         navigationController?.setNavigationBarHidden(false, animated: true)
+        self.title = "\(categoryNames[categoryNum!])"
         paintSquares()
+        roundCorners()
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -61,5 +63,13 @@ class PickerViewController: UIViewController {
             }
         }
         fatalError("Cannot movie tag")
+    }
+    
+    func roundCorners() {
+        for i in 1...25 {
+            if let button = view.viewWithTag(i) as? UIButton{
+                button.layer.cornerRadius = button.frame.size.height / 5
+            }
+        }
     }
 }

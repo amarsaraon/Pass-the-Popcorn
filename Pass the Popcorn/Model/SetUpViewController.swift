@@ -10,4 +10,5 @@ import UIKit
 
 func setUpViewController(vc: UIViewController) {
     vc.overrideUserInterfaceStyle = .dark
+    vc.navigationController?.navigationBar.tintColor = UIColor.orange
 }

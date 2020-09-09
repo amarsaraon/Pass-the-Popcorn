@@ -42,7 +42,7 @@
                                     <constraint firstAttribute="height" constant="2" id="MU9-lB-ss9"/>
                                 </constraints>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0S2-hE-xNB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="0S2-hE-xNB">
                                 <rect key="frame" x="224" y="61" width="100" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="aoX-lW-nb2"/>
@@ -62,7 +62,6 @@
                             <constraint firstItem="0S2-hE-xNB" firstAttribute="centerY" secondItem="yD7-5k-EXG" secondAttribute="centerY" id="LDm-ef-5wO"/>
                             <constraint firstItem="Krh-hO-u7z" firstAttribute="leading" secondItem="yD7-5k-EXG" secondAttribute="leading" constant="20" id="XWy-Ft-Wqi"/>
                             <constraint firstItem="WfS-Po-UPp" firstAttribute="centerY" secondItem="yD7-5k-EXG" secondAttribute="centerY" id="csm-LA-Yzs"/>
-                            <constraint firstItem="nNr-c6-2Qg" firstAttribute="leading" secondItem="0S2-hE-xNB" secondAttribute="trailing" constant="18" id="dkR-jf-dmx"/>
                             <constraint firstItem="Krh-hO-u7z" firstAttribute="centerY" secondItem="yD7-5k-EXG" secondAttribute="centerY" id="gLQ-Uz-kWv"/>
                             <constraint firstAttribute="trailing" secondItem="WfS-Po-UPp" secondAttribute="trailing" constant="68" id="qHY-jE-bFj"/>
                             <constraint firstAttribute="trailing" secondItem="nNr-c6-2Qg" secondAttribute="trailing" constant="25" id="xTK-ar-SnW"/>
