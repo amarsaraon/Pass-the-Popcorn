@@ -32,6 +32,10 @@ class ResultViewController: UIViewController {
         returnButton.layer.cornerRadius = returnButton.frame.size.height / 5
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setUpViewController(vc: self)
+    }
+    
     func setUpScreen() {
         if let title = movieTitle {
             if correct! == true {

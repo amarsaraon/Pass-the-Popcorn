@@ -12,6 +12,7 @@ class CategoryCell: UITableViewCell {
 
     @IBOutlet weak var categoryText: UITextField!
     @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var rightSideImage: UIImageView!
     
     

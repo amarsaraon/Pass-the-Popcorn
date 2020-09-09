@@ -24,6 +24,7 @@ class CategoryViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        setUpViewController(vc: self)
         tableView.reloadData()
     }
     
@@ -61,11 +62,14 @@ extension CategoryViewController: UITableViewDataSource {
         if points >= categoryPoints[category]! {
             cell.categoryText.text = category
             cell.progressBar.progress = findProgress(category: indexPath.row)
+            cell.progressBar.transform = CGAffineTransform(scaleX: 1.0, y: 2.0)
+            cell.pointsLabel.isHidden = true
             cell.rightSideImage.image = UIImage(systemName: "arrowtriangle.right.fill")
             cell.selectionStyle = UITableViewCell.SelectionStyle.default
         } else {
             cell.categoryText.text = category
             cell.progressBar.isHidden = true
+            cell.pointsLabel.text = "\((categoryPoints[category] ?? 0) - points) points needed"
             cell.rightSideImage.image = UIImage(systemName: "lock.fill")
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
         }

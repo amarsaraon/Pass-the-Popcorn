@@ -27,6 +27,10 @@ class SearchViewController: UIViewController {
         searchBar.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setUpViewController(vc: self)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         if let movie = movieGuessedText.text {
             delegate!.pass(data: movie)

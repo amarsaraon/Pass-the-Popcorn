@@ -30,6 +30,7 @@ class TilesViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        setUpViewController(vc: self)
         navigationController?.setNavigationBarHidden(false, animated: true)
         searchTextField.text = ""
         guessButton.isEnabled = false
