@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-let tilesShown = 6
+let tilesShown = 12
 
 class TileData: Object {
     @objc dynamic var movieName = ""

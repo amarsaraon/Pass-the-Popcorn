@@ -50,7 +50,7 @@ class PickerViewController: UIViewController {
                 let t = findTag(name: m.movieName)
                 if let button = view.viewWithTag(t) as? UIButton {
                     button.isEnabled = false
-                    button.backgroundColor = UIColor.green
+                    button.backgroundColor = UIColor.orange
                 }
             }
         }
@@ -68,7 +68,8 @@ class PickerViewController: UIViewController {
     func roundCorners() {
         for i in 1...25 {
             if let button = view.viewWithTag(i) as? UIButton{
-                button.layer.cornerRadius = button.frame.size.height / 5
+                button.layer.cornerRadius = button.frame.size.height / 10
+                button.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
             }
         }
     }

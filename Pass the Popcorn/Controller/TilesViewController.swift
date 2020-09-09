@@ -43,9 +43,9 @@ class TilesViewController: UIViewController {
                 isCorrect = true
                 points += pointsDict[(tileDataChosen?.tilesChosen.count)!] ?? 0
                 defaults.set(points, forKey: K.pointsKey)
-                deleteTileData(movieName: title)
                 updateMovies(movieName: title)
                 performSegue(withIdentifier: K.resultTransitionName, sender: self)
+                deleteTileData(movieName: title)
             } else {
                 //print("Incorrect :(")
                 performSegue(withIdentifier: K.resultTransitionName, sender: self)
@@ -159,6 +159,7 @@ extension TilesViewController: isAbleToReceiveData {
             let destinationVC = segue.destination as! ResultViewController
             destinationVC.correct = isCorrect
             destinationVC.movieTitle = movieChosen!.facts[0]
+            destinationVC.pointsGained = pointsDict[(tileDataChosen?.tilesChosen.count)!] ?? 0
         }
     }
     

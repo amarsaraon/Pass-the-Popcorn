@@ -74,20 +74,6 @@
                                 <rect key="frame" x="59" y="228" width="297" height="440"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GY5-2X-LLe">
-                                <rect key="frame" x="88" y="167" width="238" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOF-O2-wPy">
-                                <rect key="frame" x="84" y="725" width="247" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kes-ST-LJk">
                                 <rect key="frame" x="144" y="779" width="126" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -96,16 +82,38 @@
                                     <action selector="returnButtonPressed:" destination="gCZ-7k-rev" eventType="touchUpInside" id="3rr-vb-U5b"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Points Gained" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbJ-pj-W9m">
+                                <rect key="frame" x="112" y="718" width="190" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqY-sZ-qmo">
+                                <rect key="frame" x="90" y="747" width="235" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="IOF-O2-wPy">
+                                <rect key="frame" x="84" y="88" width="247" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="hDZ-9q-CtR"/>
                     </view>
                     <navigationItem key="navigationItem" id="DYu-Rc-MyB"/>
                     <connections>
-                        <outlet property="correctLabel" destination="GY5-2X-LLe" id="7xk-6o-uv7"/>
                         <outlet property="movieLabel" destination="IOF-O2-wPy" id="GmH-Nx-Fd1"/>
                         <outlet property="moviePoster" destination="BvL-Gh-gqi" id="cQi-Kc-xhQ"/>
+                        <outlet property="pointsGainedLabel" destination="zbJ-pj-W9m" id="HOA-d2-wdM"/>
                         <outlet property="returnButton" destination="kes-ST-LJk" id="ENe-s9-9kp"/>
+                        <outlet property="totalPointsLabel" destination="lqY-sZ-qmo" id="u0V-6J-Ey1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NwN-H0-PzN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -154,7 +162,9 @@
                                     <constraint firstAttribute="width" constant="60" id="HUz-e1-2qH"/>
                                     <constraint firstAttribute="height" constant="60" id="mdx-5g-wkT"/>
                                 </constraints>
-                                <state key="normal" title="21"/>
+                                <state key="normal" title="21">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="yKI-gg-O9n"/>
                                 </connections>
@@ -166,7 +176,9 @@
                                     <constraint firstAttribute="height" constant="60" id="ICs-ab-Gld"/>
                                     <constraint firstAttribute="width" constant="60" id="q4d-Kx-H2l"/>
                                 </constraints>
-                                <state key="normal" title="23"/>
+                                <state key="normal" title="23">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="pcG-1h-XDd"/>
                                 </connections>
@@ -178,7 +190,9 @@
                                     <constraint firstAttribute="height" constant="60" id="5sx-ao-PFz"/>
                                     <constraint firstAttribute="width" constant="60" id="Ta8-Y5-he0"/>
                                 </constraints>
-                                <state key="normal" title="24"/>
+                                <state key="normal" title="24">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="bsK-Lz-gXu"/>
                                 </connections>
@@ -190,7 +204,9 @@
                                     <constraint firstAttribute="width" constant="60" id="8bm-Oh-hJO"/>
                                     <constraint firstAttribute="height" constant="60" id="tjz-cS-JeI"/>
                                 </constraints>
-                                <state key="normal" title="22"/>
+                                <state key="normal" title="22">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="ZDQ-Sc-79d"/>
                                 </connections>
@@ -202,7 +218,9 @@
                                     <constraint firstAttribute="width" constant="60" id="Z25-Ui-u7A"/>
                                     <constraint firstAttribute="height" constant="60" id="abx-Fw-4oB"/>
                                 </constraints>
-                                <state key="normal" title="25"/>
+                                <state key="normal" title="25">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="Bhc-OT-655"/>
                                 </connections>
@@ -214,7 +232,9 @@
                                     <constraint firstAttribute="height" constant="60" id="8sz-39-PaK"/>
                                     <constraint firstAttribute="width" constant="60" id="htz-B7-VHc"/>
                                 </constraints>
-                                <state key="normal" title="6"/>
+                                <state key="normal" title="6">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="itL-gp-YMQ"/>
                                 </connections>
@@ -226,7 +246,9 @@
                                     <constraint firstAttribute="height" constant="60" id="Ohs-IE-mwU"/>
                                     <constraint firstAttribute="width" constant="60" id="SgR-CE-ezd"/>
                                 </constraints>
-                                <state key="normal" title="8"/>
+                                <state key="normal" title="8">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="M2t-cR-2Z7"/>
                                 </connections>
@@ -238,7 +260,9 @@
                                     <constraint firstAttribute="height" constant="60" id="m8J-n1-oKM"/>
                                     <constraint firstAttribute="width" constant="60" id="piE-NE-3HB"/>
                                 </constraints>
-                                <state key="normal" title="7"/>
+                                <state key="normal" title="7">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="nhD-uA-6Cr"/>
                                 </connections>
@@ -250,7 +274,9 @@
                                     <constraint firstAttribute="height" constant="60" id="Aln-eg-3Kl"/>
                                     <constraint firstAttribute="width" constant="60" id="OiW-st-v8z"/>
                                 </constraints>
-                                <state key="normal" title="1"/>
+                                <state key="normal" title="1">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="ekB-4K-PCF"/>
                                 </connections>
@@ -262,7 +288,9 @@
                                     <constraint firstAttribute="width" constant="60" id="6Ze-tw-9XD"/>
                                     <constraint firstAttribute="height" constant="60" id="xTr-AA-ag0"/>
                                 </constraints>
-                                <state key="normal" title="3"/>
+                                <state key="normal" title="3">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="se5-wX-PzS"/>
                                 </connections>
@@ -274,7 +302,9 @@
                                     <constraint firstAttribute="height" constant="60" id="dBq-bO-xH9"/>
                                     <constraint firstAttribute="width" constant="60" id="iPR-ry-2z1"/>
                                 </constraints>
-                                <state key="normal" title="4"/>
+                                <state key="normal" title="4">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="5wn-BH-EfG"/>
                                 </connections>
@@ -286,7 +316,9 @@
                                     <constraint firstAttribute="height" constant="60" id="gML-5B-AcO"/>
                                     <constraint firstAttribute="width" constant="60" id="lFP-x6-RHY"/>
                                 </constraints>
-                                <state key="normal" title="2"/>
+                                <state key="normal" title="2">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="iLS-gA-rHx"/>
                                 </connections>
@@ -298,7 +330,9 @@
                                     <constraint firstAttribute="height" constant="60" id="M4o-Jg-hMm"/>
                                     <constraint firstAttribute="width" constant="60" id="pyQ-bS-06s"/>
                                 </constraints>
-                                <state key="normal" title="5"/>
+                                <state key="normal" title="5">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="l9C-Ws-G4R"/>
                                 </connections>
@@ -310,7 +344,9 @@
                                     <constraint firstAttribute="width" constant="60" id="Whe-25-3e5"/>
                                     <constraint firstAttribute="height" constant="60" id="a1z-F4-g4U"/>
                                 </constraints>
-                                <state key="normal" title="11"/>
+                                <state key="normal" title="11">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="zek-8q-3UE"/>
                                 </connections>
@@ -322,7 +358,9 @@
                                     <constraint firstAttribute="width" constant="60" id="LjA-bk-Psb"/>
                                     <constraint firstAttribute="height" constant="60" id="cUm-Yh-60o"/>
                                 </constraints>
-                                <state key="normal" title="13"/>
+                                <state key="normal" title="13">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="2W4-T0-y7y"/>
                                 </connections>
@@ -334,7 +372,9 @@
                                     <constraint firstAttribute="width" constant="60" id="WoJ-H3-A9p"/>
                                     <constraint firstAttribute="height" constant="60" id="hlp-dh-Wmt"/>
                                 </constraints>
-                                <state key="normal" title="14"/>
+                                <state key="normal" title="14">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="cww-UV-YET"/>
                                 </connections>
@@ -346,7 +386,9 @@
                                     <constraint firstAttribute="width" constant="60" id="7vV-Ri-7qp"/>
                                     <constraint firstAttribute="height" constant="60" id="utW-Sk-tsA"/>
                                 </constraints>
-                                <state key="normal" title="12"/>
+                                <state key="normal" title="12">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="YQe-MR-s8g"/>
                                 </connections>
@@ -358,7 +400,9 @@
                                     <constraint firstAttribute="width" constant="60" id="HRT-3S-MWu"/>
                                     <constraint firstAttribute="height" constant="60" id="av4-pr-JJx"/>
                                 </constraints>
-                                <state key="normal" title="15"/>
+                                <state key="normal" title="15">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="0Vl-mQ-6F0"/>
                                 </connections>
@@ -370,7 +414,9 @@
                                     <constraint firstAttribute="height" constant="60" id="EHl-Xa-2GP"/>
                                     <constraint firstAttribute="width" constant="60" id="sat-g9-8hR"/>
                                 </constraints>
-                                <state key="normal" title="16"/>
+                                <state key="normal" title="16">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="Zfy-9x-hIt"/>
                                 </connections>
@@ -382,7 +428,9 @@
                                     <constraint firstAttribute="height" constant="60" id="rkj-Nh-Gf5"/>
                                     <constraint firstAttribute="width" constant="60" id="tdK-PZ-VGf"/>
                                 </constraints>
-                                <state key="normal" title="18"/>
+                                <state key="normal" title="18">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="7YQ-C7-5q6"/>
                                 </connections>
@@ -394,7 +442,9 @@
                                     <constraint firstAttribute="height" constant="60" id="Bd0-y0-Lb4"/>
                                     <constraint firstAttribute="width" constant="60" id="OP7-T5-GjY"/>
                                 </constraints>
-                                <state key="normal" title="19"/>
+                                <state key="normal" title="19">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="5dd-qJ-s3P"/>
                                 </connections>
@@ -406,7 +456,9 @@
                                     <constraint firstAttribute="width" constant="60" id="c9s-T9-ACI"/>
                                     <constraint firstAttribute="height" constant="60" id="xKc-ln-Vgf"/>
                                 </constraints>
-                                <state key="normal" title="17"/>
+                                <state key="normal" title="17">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="aIu-ql-mMs"/>
                                 </connections>
@@ -418,7 +470,9 @@
                                     <constraint firstAttribute="width" constant="60" id="NhR-MB-bsz"/>
                                     <constraint firstAttribute="height" constant="60" id="PmO-l2-eJG"/>
                                 </constraints>
-                                <state key="normal" title="20"/>
+                                <state key="normal" title="20">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="7CG-vR-saJ"/>
                                 </connections>
@@ -430,7 +484,9 @@
                                     <constraint firstAttribute="height" constant="60" id="Rch-5Q-Jc8"/>
                                     <constraint firstAttribute="width" constant="60" id="WE7-Qe-zZn"/>
                                 </constraints>
-                                <state key="normal" title="9"/>
+                                <state key="normal" title="9">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="1iX-ti-dKV"/>
                                 </connections>
@@ -442,7 +498,9 @@
                                     <constraint firstAttribute="height" constant="60" id="QNF-0y-b6T"/>
                                     <constraint firstAttribute="width" constant="60" id="s9a-QG-fk7"/>
                                 </constraints>
-                                <state key="normal" title="10"/>
+                                <state key="normal" title="10">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="zQg-eL-ahE" eventType="touchUpInside" id="qdy-0a-DMt"/>
                                 </connections>

@@ -11,9 +11,10 @@ import ChameleonFramework
 
 class ResultViewController: UIViewController {
 
-    @IBOutlet weak var correctLabel: UILabel!
     @IBOutlet weak var movieLabel: UILabel!
     @IBOutlet weak var moviePoster: UIImageView!
+    @IBOutlet weak var pointsGainedLabel: UILabel!
+    @IBOutlet weak var totalPointsLabel: UILabel!
     @IBOutlet weak var returnButton: UIButton!
     
     var correct: Bool?
@@ -22,6 +23,7 @@ class ResultViewController: UIViewController {
     var moviePosterImage: UIImage?
     var backgroundColor: UIColor?
     var textColor: UIColor?
+    var pointsGained: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +41,14 @@ class ResultViewController: UIViewController {
     func setUpScreen() {
         if let title = movieTitle {
             if correct! == true {
-                correctLabel.text = "Correct!"
                 movieLabel.text = title
+                pointsGainedLabel.text = "\(pointsGained ?? 0) points gained"
+                totalPointsLabel.text = "You now have \(points) points"
                 returnButton.setTitle(K.ResultButtonLabels.playAgain, for: .normal)
             } else {
-                correctLabel.text = "Incorrect :("
                 movieLabel.text = ""
+                pointsGainedLabel.text = ""
+                totalPointsLabel.text = ""
                 returnButton.setTitle(K.ResultButtonLabels.guessAgain, for: .normal)
             }
         }
@@ -109,8 +113,13 @@ class ResultViewController: UIViewController {
     }
     
     func changeLabelColor(color: UIColor) {
-        correctLabel.textColor = textColor
-        movieLabel.textColor = textColor
+        movieLabel.textColor = color
+        pointsGainedLabel.textColor = color
+        totalPointsLabel.textColor = color
+        returnButton.backgroundColor = color
+        returnButton.setTitleColor(UIColor.orange, for: .normal)
+        returnButton.layer.borderWidth = 3.0
+        returnButton.layer.borderColor = ContrastColorOf(color, returnFlat: true).cgColor
     }
 
 }

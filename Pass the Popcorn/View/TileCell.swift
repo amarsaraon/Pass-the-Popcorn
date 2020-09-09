@@ -33,7 +33,6 @@ class TileCell: UITableViewCell {
         //tile.backgroundColor = colorDict[category]
         tile.backgroundColor = UIColor.orange
         //self.categoryLabel.textColor = colorDict[category]
-        self.categoryLabel.font = UIFont.boldSystemFont(ofSize: self.categoryLabel.font.pointSize)
     }
     
 }
