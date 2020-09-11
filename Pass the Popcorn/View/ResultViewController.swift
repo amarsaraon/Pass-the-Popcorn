@@ -78,7 +78,7 @@ class ResultViewController: UIViewController {
             colorBackground(poster: currentPoster)
         } else {
             if let title = movieTitle {
-                let url = URL(string: "https://theposterdb.com/api/assets/\(posterDict[title]!.randomElement()!)")
+                let url = URL(string: "https://theposterdb.com/api/assets/\(posterDict[title]!)")
                 let data = try? Data(contentsOf: url!)
                 if let imageData = data {
                     if let image = UIImage(data: imageData) {
