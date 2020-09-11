@@ -51,6 +51,7 @@ class PickerViewController: UIViewController {
                 if let button = view.viewWithTag(t) as? UIButton {
                     button.isEnabled = false
                     button.backgroundColor = UIColor.orange
+                    button.titleLabel?.textColor = UIColor.gray
                 }
             }
         }
