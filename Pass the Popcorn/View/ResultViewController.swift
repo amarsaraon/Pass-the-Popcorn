@@ -43,7 +43,7 @@ class ResultViewController: UIViewController {
             if correct! == true {
                 movieLabel.text = title
                 pointsGainedLabel.text = "\(pointsGained ?? 0) points gained"
-                totalPointsLabel.text = "You now have \(points) points"
+                totalPointsLabel.text = "You have \(points) points"
                 returnButton.setTitle(K.ResultButtonLabels.playAgain, for: .normal)
             } else {
                 movieLabel.text = ""
