@@ -24,6 +24,7 @@ class ResultViewController: UIViewController {
     var backgroundColor: UIColor?
     var textColor: UIColor?
     var pointsGained: Int?
+    var direct: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,11 @@ class ResultViewController: UIViewController {
                 movieLabel.text = title
                 pointsGainedLabel.text = "\(pointsGained ?? 0) points gained"
                 totalPointsLabel.text = "You have \(points) points"
-                returnButton.setTitle(K.ResultButtonLabels.playAgain, for: .normal)
+                if direct == false {
+                    returnButton.setTitle(K.ResultButtonLabels.playAgain, for: .normal)
+                } else {
+                    returnButton.setTitle(K.ResultButtonLabels.goBack, for: .normal)
+                }
             } else {
                 movieLabel.text = ""
                 pointsGainedLabel.text = ""

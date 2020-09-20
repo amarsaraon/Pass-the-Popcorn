@@ -17,12 +17,14 @@ struct K {
     static let searchTransitionName = "goToSearch"
     static let resultTransitionName = "goToResult"
     static let tilesTransitionName = "goToTiles"
+    static let directResultTransitionName = "goToResultDirectly"
     static let pickerTransitionName = "goToPicker"
     static let pointsKey = "points"
     
     struct ResultButtonLabels {
         static let playAgain = "Play Again"
         static let guessAgain = "Guess Again"
+        static let goBack = "Go Back"
     }
 
 }

@@ -116,9 +116,9 @@
 			children = (
 				C3F63B152501799A00C78EF0 /* CategoryViewController.swift */,
 				C3EC918A24FEA1B200AAE08B /* PickerViewController.swift */,
-				C3B9865424F82B1E00C370D5 /* ResultViewController.swift */,
-				C3EE6E0724F5674700CD3F58 /* SearchViewController.swift */,
 				C3A09E7024F41A600016C491 /* TilesViewController.swift */,
+				C3EE6E0724F5674700CD3F58 /* SearchViewController.swift */,
+				C3B9865424F82B1E00C370D5 /* ResultViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

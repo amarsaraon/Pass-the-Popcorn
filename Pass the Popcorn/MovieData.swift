@@ -13,6 +13,7 @@ class MovieData: Object {
     @objc dynamic var movieName = ""
     @objc dynamic var category = 0
     @objc dynamic var done = false
+    @objc dynamic var pointsGained = 0
     
     required convenience init(_ name: String, _ categoryNum: Int) {
         self.init()

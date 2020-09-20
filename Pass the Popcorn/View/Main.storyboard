@@ -598,6 +598,7 @@
                     <navigationItem key="navigationItem" id="3Sz-Bk-ZwE"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToTiles" id="Oa0-m6-Qkv"/>
+                        <segue destination="gCZ-7k-rev" kind="show" identifier="goToResultDirectly" id="Hr2-1B-SFt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JXV-V1-qUn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -702,6 +703,9 @@
             <point key="canvasLocation" x="-1354" y="139"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Hr2-1B-SFt"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark.rectangle.fill" catalog="system" width="128" height="93"/>
     </resources>

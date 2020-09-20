@@ -33,13 +33,25 @@ class PickerViewController: UIViewController {
         if let num = sender.titleLabel?.text {
             numPressed = Int(num)
         }
-        performSegue(withIdentifier: K.tilesTransitionName, sender: self)
+        if sender.backgroundColor == UIColor.orange {
+            performSegue(withIdentifier: K.directResultTransitionName, sender: self)
+        } else {
+            performSegue(withIdentifier: K.tilesTransitionName, sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.tilesTransitionName {
             let destinationVC = segue.destination as! TilesViewController
             destinationVC.movieChosen = categoryList![numPressed! - 1]
+        }
+        else if segue.identifier == K.directResultTransitionName {
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.correct = true
+            let mTitle = categoryList![numPressed! - 1].facts[0]
+            destinationVC.movieTitle = mTitle
+            destinationVC.pointsGained = realm.objects(MovieData.self).filter("movieName == %@", mTitle)[0].pointsGained
+            destinationVC.direct = true
         }
     }
     
@@ -49,7 +61,6 @@ class PickerViewController: UIViewController {
             if m.done == true {
                 let t = findTag(name: m.movieName)
                 if let button = view.viewWithTag(t) as? UIButton {
-                    button.isEnabled = false
                     button.backgroundColor = UIColor.orange
                     button.titleLabel?.textColor = UIColor.gray
                 }

@@ -32,11 +32,12 @@ func loadMovies(realmMovies: Results<MovieData>) {
     }
 }
 
-func updateMovies(movieName: String) {
+func updateMovies(movieName: String, pointsGained: Int) {
     let chosenMovie = realm.objects(MovieData.self).filter("movieName == %@", movieName)[0]
     do {
         try realm.write {
             chosenMovie.done = true
+            chosenMovie.pointsGained = pointsGained
         }
     } catch {
         print("Error saving done status, \(error)")
