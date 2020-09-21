@@ -11,6 +11,8 @@ import RealmSwift
 
 class PickerViewController: UIViewController {
 
+    @IBOutlet weak var pointsTextField: UITextField!
+    
     var numPressed: Int?
     var categoryNum: Int?
     var categoryList: [Movie]?
@@ -24,6 +26,7 @@ class PickerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         setUpViewController(vc: self)
         navigationController?.setNavigationBarHidden(false, animated: true)
+        pointsTextField.text = "Points from this category: \(findPoints())"
         self.title = "\(categoryNames[categoryNum!])"
         paintSquares()
         roundCorners()
@@ -55,6 +58,8 @@ class PickerViewController: UIViewController {
         }
     }
     
+//MARK: - Prepare Screen Methods
+    
     func paintSquares() {
         let movieSquares = realm.objects(MovieData.self).filter("category == %@", categoryNum!)
         for m in movieSquares {
@@ -84,5 +89,13 @@ class PickerViewController: UIViewController {
                 button.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
             }
         }
+    }
+    
+    func findPoints() -> Int{
+        var pointsFromCategory = 0
+        realm.objects(MovieData.self).filter("category == %@", categoryNum!).forEach { m in
+            pointsFromCategory += m.pointsGained
+        }
+        return pointsFromCategory
     }
 }
