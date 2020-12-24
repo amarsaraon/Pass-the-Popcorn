@@ -46,4 +46,7 @@ enum MovieNames: String, CaseIterable {
     case coco = "Coco"
     case theMatrix = "The Matrix"
     case rocky = "Rocky"
+    case homeAlone = "Home Alone"
+    case alien = "Alien"
+    case raidersOfTheLostArk = "Raiders of the Lost Ark"
 }
