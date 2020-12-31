@@ -11,6 +11,7 @@ import UIKit
 class CategoryViewController: UIViewController {
 
     var categoryNumPressed: Int?
+    let visionThreshold = 3  // how many points away you need to be to see category title
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
@@ -68,9 +69,15 @@ extension CategoryViewController: UITableViewDataSource {
             cell.rightSideImage.image = UIImage(systemName: "arrowtriangle.right.fill")
             cell.selectionStyle = UITableViewCell.SelectionStyle.default
         } else {
-            cell.categoryText.text = category
+            if (categoryPoints[category] ?? 0) - points <= visionThreshold {
+                cell.categoryText.text = category
+                cell.pointsLabel.textColor = UIColor.black
+            }
+            else {
+                cell.categoryText.text = ""
+            }
+            cell.pointsLabel.text = "\(categoryPoints[category] ?? 0) points required"
             cell.progressBar.isHidden = true
-            cell.pointsLabel.text = "\((categoryPoints[category] ?? 0) - points) points needed"
             cell.rightSideImage.image = UIImage(systemName: "lock.fill")
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
         }
@@ -92,3 +99,4 @@ extension CategoryViewController: UITableViewDelegate {
     }
     
 }
+
