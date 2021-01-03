@@ -25,6 +25,7 @@ class ResultViewController: UIViewController {
     var textColor: UIColor?
     var pointsGained: Int?
     var direct: Bool?
+    var foundImage = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,12 @@ class ResultViewController: UIViewController {
     func setUpScreen() {
         if let title = movieTitle {
             if correct! == true {
-                movieLabel.text = title
+                if foundImage {
+                    movieLabel.text = "Correct!"
+                }
+                else {
+                    movieLabel.text = title
+                }
                 pointsGainedLabel.text = "\(pointsGained ?? 0) points gained"
                 totalPointsLabel.text = "You have \(points) points"
                 if direct == false {
@@ -51,7 +57,7 @@ class ResultViewController: UIViewController {
                     returnButton.setTitle(K.ResultButtonLabels.goBack, for: .normal)
                 }
             } else {
-                movieLabel.text = ""
+                movieLabel.text = "Incorrect"
                 pointsGainedLabel.text = ""
                 totalPointsLabel.text = ""
                 returnButton.setTitle(K.ResultButtonLabels.guessAgain, for: .normal)
@@ -87,6 +93,7 @@ class ResultViewController: UIViewController {
                 let data = try? Data(contentsOf: url!)
                 if let imageData = data {
                     if let image = UIImage(data: imageData) {
+                        foundImage = true
                         moviePosterImage = image
                         if correct == true {
                             moviePoster.image = image
