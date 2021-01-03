@@ -11,7 +11,7 @@ import UIKit
 class CategoryViewController: UIViewController {
 
     var categoryNumPressed: Int?
-    let visionThreshold = 3  // how many points away you need to be to see category title
+    let visionThreshold = 5  // how many points away you need to be to see category title
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
