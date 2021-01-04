@@ -27,6 +27,7 @@ class CategoryViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         setUpViewController(vc: self)
         pointsLabel.text = "Points: \(points)"
+        self.title = "Pass the Popcorn"
         tableView.reloadData()
     }
     
