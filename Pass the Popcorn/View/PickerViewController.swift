@@ -79,6 +79,8 @@ class PickerViewController: UIViewController {
                 return i
             }
         }
+        print(name)
+        print(categoryList!)
         fatalError("Cannot movie tag")
     }
     
