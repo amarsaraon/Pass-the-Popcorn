@@ -94,4 +94,13 @@ enum MovieNames: String, CaseIterable {
     case loganLucky = "Logan Lucky"
     case moneyPythonAndTHG = "Monty Python and the Holy Grail"
     case forrestGump = "Forrest Gump"
+    case fightClub = "Fight Club"
+    case parasite = "Parasite"
+    case spotlight = "Spotlight"
+    case thereWillBeBlood = "There Will Be Blood"
+    case unbreakable = "Unbreakable"
+    case meanGirls = "Mean Girls"
+    case her = "Her"
+    case madMaxFR = "Mad Max: Fury Road"
+    case catchMeIfYouCan = "Catch Me If You Can"
 }
