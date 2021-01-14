@@ -103,4 +103,11 @@ enum MovieNames: String, CaseIterable {
     case her = "Her"
     case madMaxFR = "Mad Max: Fury Road"
     case catchMeIfYouCan = "Catch Me If You Can"
+    case thePrestige = "The Prestige"
+    case scottPilgrim = "Scott Pilgrim vs. the World"
+    case kingsman = "Kingsman: The Secret Service"
+    case theIncredibles = "The Incredibles"
+    case noCountryForOldMen = "No Country For Old Men"
+    case tropicThunder = "Tropic Thunder"
+    case schoolOfRock = "School of Rock"
 }
