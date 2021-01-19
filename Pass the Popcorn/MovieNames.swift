@@ -120,4 +120,10 @@ enum MovieNames: String, CaseIterable {
     case theWolfOfWallStreet = "The Wolf of Wall Street"
     case blackHawkDown = "Black Hawk Down"
     case rememeberTheTitans = "Remember the Titans"
+    case allThePresidentsMen = "All the President's Men"
+    case theSixthSense = "The Sixth Sense"
+    case savingPrivateRyan = "Saving Private Ryan"
+    case pulpFiction = "Pulp Fiction"
+    case oneFlewOverTheCuckoosNest = "One Flew Over the Cuckoo's Nest"
+    case theBreakfastClub = "The Breakfast Club"
 }
