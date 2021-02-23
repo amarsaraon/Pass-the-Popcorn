@@ -64,44 +64,53 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnH-vK-Gov" userLabel="Guess View">
                                 <rect key="frame" x="0.0" y="799" width="414" height="63"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUF-Z1-4Kp">
-                                        <rect key="frame" x="318" y="16.666666666666629" width="86" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="86" id="3jU-qX-3Jt"/>
-                                            <constraint firstAttribute="height" constant="30" id="XHp-hi-JHB"/>
-                                        </constraints>
-                                        <state key="normal" title="Guess"/>
-                                        <connections>
-                                            <action selector="guessPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rQs-aC-KIa"/>
-                                        </connections>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x76-vM-WIo" userLabel="Search View">
-                                        <rect key="frame" x="0.0" y="0.0" width="318" height="63"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmj-lI-KTA" userLabel="Search View">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="63"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Choose Movie" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IKQ-Hi-udy">
-                                                <rect key="frame" x="5.6666666666666572" y="17" width="307" height="29"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="307" id="cdr-ry-rOh"/>
-                                                    <constraint firstAttribute="height" constant="28.670000000000002" id="igG-QK-GgT"/>
-                                                </constraints>
+                                                <rect key="frame" x="5" y="17" width="351" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="IKQ-Hi-udy" firstAttribute="centerY" secondItem="x76-vM-WIo" secondAttribute="centerY" id="2WF-qW-pFi"/>
-                                            <constraint firstItem="IKQ-Hi-udy" firstAttribute="centerX" secondItem="x76-vM-WIo" secondAttribute="centerX" id="TLV-BR-5rl"/>
-                                            <constraint firstAttribute="height" constant="63" id="tC3-lE-hKK"/>
+                                            <constraint firstAttribute="trailing" secondItem="IKQ-Hi-udy" secondAttribute="trailing" constant="5" id="Ma5-bb-hM7"/>
+                                            <constraint firstItem="IKQ-Hi-udy" firstAttribute="centerY" secondItem="mmj-lI-KTA" secondAttribute="centerY" id="aWo-ae-OWP"/>
+                                            <constraint firstItem="IKQ-Hi-udy" firstAttribute="centerX" secondItem="mmj-lI-KTA" secondAttribute="centerX" id="pkx-Lo-PvM"/>
+                                            <constraint firstItem="IKQ-Hi-udy" firstAttribute="leading" secondItem="mmj-lI-KTA" secondAttribute="leading" constant="5" id="wSC-Xm-srd"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPs-ly-QTu" userLabel="Guess Button View">
+                                        <rect key="frame" x="361" y="0.0" width="53" height="63"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUF-Z1-4Kp">
+                                                <rect key="frame" x="5" y="16.666666666666629" width="43" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="Xz5-hv-arE"/>
+                                                    <constraint firstAttribute="width" constant="43" id="gMw-Cv-n2s"/>
+                                                </constraints>
+                                                <state key="normal" title="Guess"/>
+                                                <connections>
+                                                    <action selector="guessPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rQs-aC-KIa"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="hUF-Z1-4Kp" firstAttribute="centerY" secondItem="aPs-ly-QTu" secondAttribute="centerY" id="wwH-GP-i8s"/>
+                                            <constraint firstAttribute="width" constant="53" id="yKz-TJ-J5o"/>
+                                            <constraint firstItem="hUF-Z1-4Kp" firstAttribute="centerX" secondItem="aPs-ly-QTu" secondAttribute="centerX" id="yPU-Vj-Ha6"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="hUF-Z1-4Kp" firstAttribute="centerY" secondItem="cnH-vK-Gov" secondAttribute="centerY" id="GfA-6q-QvO"/>
-                                    <constraint firstItem="x76-vM-WIo" firstAttribute="leading" secondItem="cnH-vK-Gov" secondAttribute="leading" id="Hw7-fO-ro0"/>
-                                    <constraint firstItem="hUF-Z1-4Kp" firstAttribute="leading" secondItem="x76-vM-WIo" secondAttribute="trailing" id="KKV-Z6-vuM"/>
-                                    <constraint firstAttribute="trailing" secondItem="hUF-Z1-4Kp" secondAttribute="trailing" constant="10" id="PQB-XK-ZFS"/>
-                                    <constraint firstItem="x76-vM-WIo" firstAttribute="centerY" secondItem="hUF-Z1-4Kp" secondAttribute="centerY" id="dwh-MX-PlG"/>
+                                    <constraint firstItem="aPs-ly-QTu" firstAttribute="leading" secondItem="mmj-lI-KTA" secondAttribute="trailing" id="13G-qQ-nXD"/>
+                                    <constraint firstItem="mmj-lI-KTA" firstAttribute="leading" secondItem="cnH-vK-Gov" secondAttribute="leading" id="4Cd-JD-KmJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="mmj-lI-KTA" secondAttribute="bottom" id="AT1-af-YeJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="aPs-ly-QTu" secondAttribute="bottom" id="LNF-ef-GoA"/>
+                                    <constraint firstItem="aPs-ly-QTu" firstAttribute="top" secondItem="cnH-vK-Gov" secondAttribute="top" id="cni-jy-q45"/>
+                                    <constraint firstItem="mmj-lI-KTA" firstAttribute="top" secondItem="cnH-vK-Gov" secondAttribute="top" id="ghO-Xj-1p3"/>
                                     <constraint firstAttribute="height" constant="63" id="n5f-fY-R7w"/>
+                                    <constraint firstAttribute="trailing" secondItem="aPs-ly-QTu" secondAttribute="trailing" id="pch-9o-C3k"/>
                                 </constraints>
                             </view>
                         </subviews>
