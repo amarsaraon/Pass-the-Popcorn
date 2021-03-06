@@ -76,9 +76,10 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text {
-            if text.count >= 2 {
+            if text.count >= 1 {
                 movieList = fullMovieList.filter { $0.localizedStandardContains(text) }
-                movieList = movieList.sorted { $0.lowercased() < $1.lowercased() }
+                movieList = sortMovieList(movieList: movieList)
+                //movieList = movieList.sorted { $0.lowercased() < $1.lowercased() }
                 movieTable.reloadData()
                 searchBar.resignFirstResponder()
             }
@@ -92,4 +93,30 @@ extension SearchViewController: UISearchBarDelegate {
         }
     }
     
+}
+
+func sortMovieList(movieList: [String]) ->  [String]{
+    var sortedList = movieList
+    var wordsDict = [String: String]()
+    print(sortedList.count)
+    for i in 0...sortedList.count - 1 { // removes prefixes from list and places them in the dictionary
+        if sortedList[i].prefix(4) == "The " {
+            sortedList[i] = String(movieList[i].suffix(sortedList[i].count - 4))
+            wordsDict[sortedList[i]] = "The "
+        } else if sortedList[i].prefix(2) == "A " {
+            sortedList[i] = String(movieList[i].suffix(sortedList[i].count - 2))
+            wordsDict[sortedList[i]] = "A "
+        } else if sortedList[i].prefix(3) == "An " {
+            sortedList[i] = String(movieList[i].suffix((sortedList[i].count - 3)))
+            wordsDict[sortedList[i]] = "An "
+        }
+    }
+    sortedList = sortedList.sorted { $0.lowercased() < $1.lowercased() }
+    for i in 0...sortedList.count - 1{ // adds the prefixes back to list
+        let prefix = wordsDict[sortedList[i]]
+        if (prefix != nil) {
+            sortedList[i] = prefix! + sortedList[i]
+        }
+    }
+    return sortedList
 }

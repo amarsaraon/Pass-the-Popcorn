@@ -16,6 +16,7 @@ class PickerViewController: UIViewController {
     var numPressed: Int?
     var categoryNum: Int?
     var categoryList: [Movie]?
+    let buttonBlue = UIColor(red: 7/255, green: 58/255, blue: 90/255, alpha: 1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +68,8 @@ class PickerViewController: UIViewController {
                 let t = findTag(name: m.movieName)
                 if let button = view.viewWithTag(t) as? UIButton {
                     button.backgroundColor = UIColor.orange
-                    button.titleLabel?.textColor = UIColor.gray
+                    button.setTitleColor(buttonBlue, for: .normal)
+                    // button.titleLabel?.textColor = UIColor.gray
                 }
             }
         }
