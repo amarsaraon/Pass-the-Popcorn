@@ -76,10 +76,9 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text {
-            if text.count >= 1 {
+            if text.count >= 2 {
                 movieList = fullMovieList.filter { $0.localizedStandardContains(text) }
                 movieList = sortMovieList(movieList: movieList)
-                //movieList = movieList.sorted { $0.lowercased() < $1.lowercased() }
                 movieTable.reloadData()
                 searchBar.resignFirstResponder()
             }
