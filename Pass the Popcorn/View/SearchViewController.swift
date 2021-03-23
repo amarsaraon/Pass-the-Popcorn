@@ -78,7 +78,9 @@ extension SearchViewController: UISearchBarDelegate {
         if let text = searchBar.text {
             if text.count >= 2 {
                 movieList = fullMovieList.filter { $0.localizedStandardContains(text) }
-                movieList = sortMovieList(movieList: movieList)
+                if movieList.count != 0 {
+                    movieList = sortMovieList(movieList: movieList)
+                }
                 movieTable.reloadData()
                 searchBar.resignFirstResponder()
             }
@@ -97,7 +99,6 @@ extension SearchViewController: UISearchBarDelegate {
 func sortMovieList(movieList: [String]) ->  [String]{
     var sortedList = movieList
     var wordsDict = [String: String]()
-    print(sortedList.count)
     for i in 0...sortedList.count - 1 { // removes prefixes from list and places them in the dictionary
         if sortedList[i].prefix(4) == "The " {
             sortedList[i] = String(movieList[i].suffix(sortedList[i].count - 4))
